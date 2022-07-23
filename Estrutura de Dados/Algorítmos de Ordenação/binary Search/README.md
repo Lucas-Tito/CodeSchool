@@ -9,7 +9,7 @@ Este código implementa um algoitimo chamado Binary Search, estes são seus pass
 
 + Os elementos devem estar ordenados.
 + Começar com o elemento do meio no array.
-+ se o valor buscado for encontrado neste, o programa retorna este índice do array.
++ Se o valor buscado for encontrado neste, o programa retorna este índice do array.
 + Se não, caso o valor do elemento do meio seja maior que o valor buscado, o intervalo de busca é alterado para a metade inferior do vetor.
 + Caso o valor do elemento do meio seja menor que o valor buscado, o intervalo de busca é alterado para a metade superior do vetor.
 
