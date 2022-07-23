@@ -11,15 +11,12 @@ Bubble Sort é o algoritmo de ordenação mais simples que funciona trocando rep
 
 <br> <br>
 ## Entrada
-Na primeira linha será fornecido o número de elementos a serem armazenados e o número de elementos a serem buscados. <br>
-Na segunda, espera-se os elementos a serem armazenados separados por espaço em uma única linha.<br>
-Já na terceira, serão fornecidos os elementos a serem buscados separados por espaço em uma única linha.
+A primeira linha contém o inteiro N (1 <= N <= 5000)denotando o número de elementos do vetor A. <br>
+A segunda linha contém inteiros positivos denotando os elementos do vetor A.
 
 ex: <br>
-8 4<br>
-2 3 4 8 10 45 54 72<br>
-8 9 54 72<br>
+5 <br>
 1 3 2 5 4 <br>
 
 ## Saída
-O programa imprime o número de iterações que o álgorítimo precisou para achar cada elemento.
+O programa imprime um número que denota o número de iterações que o algorítimo precisou para ordenar os elementos.
