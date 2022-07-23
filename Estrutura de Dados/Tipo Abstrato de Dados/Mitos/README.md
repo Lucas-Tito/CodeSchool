@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://lh5.googleusercontent.com/_oLwPF5ZvaZZ4pGD-HvSUSw6nTwwHjUwcLpNigUvb24-PKNwjMUwXcWYWf2wp4HopzHkh9JVmZd_AFYP4HjSYelidbw4FRo1fHrWV3KxbFM13xlRLALb-y-EbLhEmln11lhwEZPV" alt="header" width="50%" height="50%"/>
+  <img src="https://cdn.britannica.com/13/24313-004-0861FD8C/lightning-discharge-branches-channel.jpg?w=400&h=300&c=crop" alt="header" width="30%" height="30%"/>
 </p>
 
 
@@ -18,7 +18,11 @@ Cada uma das NN linhas seguintes contém 2 números inteiros X, YX,Y representan
 
 ex: <br>
 5 <br>
-1 3 2 5 4 <br>
+1 1 <br>
+2 3 <br>
+3 3 <br>
+4 2 <br>
+4 4 <br>
 
 ## Saída
 O programa imprime o número 0 se nenhum raio caiu no mesmo lugar, ou o número 1 caso contrário.<br>
