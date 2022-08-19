@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Trabalho1</string>
+    <string name="ToggleButtonLable">i\'m toggle button</string>
+    <string name="EditTextLable">I\'m Edit Text</string>
+</resources>
