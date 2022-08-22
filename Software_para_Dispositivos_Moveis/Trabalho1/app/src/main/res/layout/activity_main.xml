@@ -54,7 +54,7 @@
         app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName" />
 
     <Spinner
-        android:id="@+id/spinner2"
+        android:id="@+id/dropdown_menu"
         android:layout_width="218dp"
         android:layout_height="26dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -69,9 +69,9 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"
         android:text="@string/dropdownLable"
-        app:layout_constraintBottom_toTopOf="@+id/spinner2"
-        app:layout_constraintEnd_toEndOf="@+id/spinner2"
+        app:layout_constraintBottom_toTopOf="@+id/dropdown_menu"
+        app:layout_constraintEnd_toEndOf="@+id/dropdown_menu"
         app:layout_constraintHorizontal_bias="0.4"
-        app:layout_constraintStart_toStartOf="@+id/spinner2" />
+        app:layout_constraintStart_toStartOf="@+id/dropdown_menu" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
