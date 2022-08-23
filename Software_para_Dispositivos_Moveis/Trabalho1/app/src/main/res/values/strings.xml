@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Trabalho1</string>7
 
-                /*LABLES*/
+    /*LABLES*/
     <string name="ToggleButtonLable">I\'m toggle button</string>
     <string name="EditTextLable">I\'m Edit Text</string>
     <string name="dropdownLable">I\'m a dropdown to display an array</string>
@@ -9,4 +9,5 @@
 
 
     <string name="autoCompleteHint">Select an country</string>
+    <string name="btn_nextScreen">next screen</string>
 </resources>

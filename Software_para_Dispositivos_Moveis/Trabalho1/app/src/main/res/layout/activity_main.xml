@@ -16,17 +16,7 @@
         app:layout_constraintHorizontal_bias="0.376"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.735" />
-
-    <TextView
-        android:id="@+id/ToggleButtonLable"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:text="@string/ToggleButtonLable"
-        app:layout_constraintBottom_toTopOf="@+id/toggleButton"
-        app:layout_constraintEnd_toEndOf="@+id/toggleButton"
-        app:layout_constraintStart_toStartOf="@+id/toggleButton" />
+        app:layout_constraintVertical_bias="0.608" />
 
     <EditText
         android:id="@+id/editTextTextPersonName"
@@ -41,17 +31,16 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.736" />
+        app:layout_constraintVertical_bias="0.61" />
 
     <TextView
         android:id="@+id/EditTextLable"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="16dp"
         android:text="@string/EditTextLable"
         app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName"
         app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName"
-        app:layout_constraintHorizontal_bias="0.488"
         app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName" />
 
     <Spinner
@@ -63,13 +52,13 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.557" />
+        app:layout_constraintVertical_bias="0.425" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
+        android:layout_marginBottom="20dp"
         android:text="@string/dropdownLable"
         app:layout_constraintBottom_toTopOf="@+id/dropdown_menu"
         app:layout_constraintEnd_toEndOf="@+id/dropdown_menu"
@@ -87,17 +76,28 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/dropdown_menu"
-        app:layout_constraintVertical_bias="0.471" />
+        app:layout_constraintVertical_bias="0.35" />
 
     <TextView
         android:id="@+id/autoCompleteLable"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="12dp"
+        android:layout_marginBottom="8dp"
         android:text="@string/autocompleteLable"
         app:layout_constraintBottom_toTopOf="@+id/autoCompleteTextView"
         app:layout_constraintEnd_toEndOf="@+id/autoCompleteTextView"
         app:layout_constraintStart_toStartOf="@+id/autoCompleteTextView" />
+
+    <TextView
+        android:id="@+id/ToggleButtonLable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:text="@string/ToggleButtonLable"
+        app:layout_constraintBottom_toTopOf="@+id/toggleButton"
+        app:layout_constraintEnd_toEndOf="@+id/toggleButton"
+        app:layout_constraintHorizontal_bias="0.47"
+        app:layout_constraintStart_toStartOf="@+id/toggleButton" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
@@ -105,5 +105,17 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_begin="205dp" />
+
+    <Button
+        android:id="@+id/nextScreenBtn"
+        android:layout_width="132dp"
+        android:layout_height="42dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="60dp"
+        android:drawableRight="@drawable/next_page_arrow"
+        android:text="@string/btn_nextScreen"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

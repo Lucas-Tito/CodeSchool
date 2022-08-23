@@ -2,11 +2,13 @@ package com.example.trabalho1;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -22,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         build_spinner();
         build_autocomplete_countries();
+        build_btn_nextScreen();
 
 
 
@@ -51,6 +54,20 @@ public class MainActivity extends AppCompatActivity {
         ArrayAdapter Caa = new ArrayAdapter(this, android.R.layout.simple_list_item_1, countries);
         autocomplete.setAdapter(Caa);
         //-----------------------------------------
+
+    }
+
+    private void build_btn_nextScreen() {
+
+        Button btnNextScreen = findViewById(R.id.nextScreenBtn);
+
+        btnNextScreen.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent secondaryScreen = new Intent(getApplicationContext(),SecondScreen.class);
+                startActivity(secondaryScreen);
+            }
+        });
 
     }
 
