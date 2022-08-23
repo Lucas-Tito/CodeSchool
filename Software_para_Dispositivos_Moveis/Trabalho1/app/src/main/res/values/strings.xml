@@ -1,6 +1,12 @@
 <resources>
-    <string name="app_name">Trabalho1</string>
-    <string name="ToggleButtonLable">Im toggle button</string>
-    <string name="EditTextLable">Im Edit Text</string>
-    <string name="dropdownLable">Im a dropdown to display an array</string>
+    <string name="app_name">Trabalho1</string>7
+
+                /*LABLES*/
+    <string name="ToggleButtonLable">I\'m toggle button</string>
+    <string name="EditTextLable">I\'m Edit Text</string>
+    <string name="dropdownLable">I\'m a dropdown to display an array</string>
+    <string name="autocompleteLable">I\'m an autocompleteTextView</string>
+
+
+    <string name="autoCompleteHint">Select an country</string>
 </resources>
