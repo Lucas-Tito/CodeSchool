@@ -20,13 +20,12 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         build_spinner();
         build_autocomplete_countries();
         build_btn_nextScreen();
-
-
 
     }
 
@@ -64,8 +63,11 @@ public class MainActivity extends AppCompatActivity {
         btnNextScreen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 Intent secondaryScreen = new Intent(getApplicationContext(),SecondScreen.class);
                 startActivity(secondaryScreen);
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);    //muda a animação de transição para second_screen
+
             }
         });
 
