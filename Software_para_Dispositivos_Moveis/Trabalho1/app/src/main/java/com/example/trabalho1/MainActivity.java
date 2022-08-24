@@ -1,9 +1,11 @@
 package com.example.trabalho1;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -11,6 +13,7 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.Toast;
+import android.widget.Toolbar;
 
 import java.util.ArrayList;
 
@@ -27,8 +30,18 @@ public class MainActivity extends AppCompatActivity {
         build_autocomplete_countries();
         build_btn_nextScreen();
 
+
     }
 
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        //getMenuInflater().inflate(R.menu.main_menu, menu);
+
+        return super.onCreateOptionsMenu(menu);
+
+    }
 
     private void build_spinner(){
 
@@ -42,6 +55,8 @@ public class MainActivity extends AppCompatActivity {
         //-----------------------------------------
 
     }
+
+
 
     private void build_autocomplete_countries() {
 

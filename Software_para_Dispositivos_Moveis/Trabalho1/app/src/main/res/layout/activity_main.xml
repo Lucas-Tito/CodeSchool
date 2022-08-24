@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+
     <ToggleButton
         android:id="@+id/toggleButton"
         android:layout_width="wrap_content"
