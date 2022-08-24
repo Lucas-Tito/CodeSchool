@@ -1,11 +1,14 @@
 package com.example.trabalho1;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -37,10 +40,22 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
 
-        //getMenuInflater().inflate(R.menu.main_menu, menu);
+    getMenuInflater().inflate(R.menu.main_menu, menu);
+    return true;
 
-        return super.onCreateOptionsMenu(menu);
+    }
 
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        switch (item.getItemId()){
+            case R.id.item1:
+                Toast.makeText(MainActivity.this, "você clicou no item1", Toast.LENGTH_LONG).show();
+                break;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 
     private void build_spinner(){

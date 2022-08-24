@@ -3,15 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/lucas/OneDrive/Área de Trabalho/UFC/CADEIRAS/GitRepository/Software_para_Dispositivos_Moveis/Trabalho1/app/src/main/res/drawable/next_page_arrow.xml" value="0.252" />
-        <entry key="..\:/Users/lucas/OneDrive/Área de Trabalho/UFC/CADEIRAS/GitRepository/Software_para_Dispositivos_Moveis/Trabalho1/app/src/main/res/layout/activity_main.xml" value="0.25" />
-        <entry key="..\:/Users/lucas/OneDrive/Área de Trabalho/UFC/CADEIRAS/GitRepository/Software_para_Dispositivos_Moveis/Trabalho1/app/src/main/res/layout/activity_second_screen.xml" value="0.278125" />
-        <entry key="..\:/Users/lucas/OneDrive/Área de Trabalho/UFC/CADEIRAS/GitRepository/Software_para_Dispositivos_Moveis/Trabalho1/app/src/main/res/layout/second_screen.xml" value="0.27445652173913043" />
-        <entry key="..\:/Users/lucas/OneDrive/Área de Trabalho/UFC/CADEIRAS/GitRepository/Software_para_Dispositivos_Moveis/Trabalho1/app/src/main/res/layout/toolbar.xml" value="0.1" />
-        <entry key="..\:/Users/lucas/OneDrive/Área de Trabalho/UFC/CADEIRAS/GitRepository/Software_para_Dispositivos_Moveis/Trabalho1/app/src/main/res/menu/main_menu.xml" value="0.27708333333333335" />
         <entry key="..\:/Users/vilan/Desktop/Mobile/Trabalho1/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/vilan/Desktop/UFC/GitRepository/Software para Dispositivos Móveis/Trabalho1/app/src/main/res/layout/activity_main.xml" value="0.33" />
-        <entry key="..\:/Users/vilan/Desktop/UFC/GitRepository/Software_para_Dispositivos_Moveis/Trabalho1/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/Users/vilan/Desktop/UFC/GitRepository/Software_para_Dispositivos_Moveis/Trabalho1/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/vilan/Desktop/UFC/GitRepository/Software_para_Dispositivos_Moveis/Trabalho1/app/src/main/res/layout/activity_second_screen.xml" value="0.25" />
+        <entry key="..\:/Users/vilan/Desktop/UFC/GitRepository/Software_para_Dispositivos_Moveis/Trabalho1/app/src/main/res/layout/second_screen.xml" value="0.203125" />
+        <entry key="..\:/Users/vilan/Desktop/UFC/GitRepository/Software_para_Dispositivos_Moveis/Trabalho1/app/src/main/res/layout/toolbar.xml" value="0.5" />
+        <entry key="..\:/Users/vilan/Desktop/UFC/GitRepository/Software_para_Dispositivos_Moveis/Trabalho1/app/src/main/res/menu/main_menu.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/vilan/Desktop/UFC/GitRepository/mobile/t1/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/vilan/Desktop/t1/app/src/main/res/layout/activity_main.xml" value="0.1" />
       </map>

@@ -6,8 +6,12 @@
     <string name="EditTextLable">I\'m Edit Text</string>
     <string name="dropdownLable">I\'m a dropdown to display an array</string>
     <string name="autocompleteLable">I\'m an autocompleteTextView</string>
+    <string name="radio_btnLable">I\'m an radio button</string>
 
 
     <string name="autoCompleteHint">Select an country</string>
     <string name="btn_nextScreen">next screen</string>
+    <string name="radio_btn">click-me</string>
+
+    <string name="item1">i\'m an item</string>
 </resources>
