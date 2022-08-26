@@ -1,19 +1,12 @@
 # Description
 
-Implemente um programa que recebe uma data no formato dia/mês/ano e verifique se é uma data válida ou não. O mês será representado pelo números de 1 a 12. Janeiro sendo 1, Fevereiro sendo 2 e assim sucessivamente.
+Receba uma data no formato dia/mês/ano e verifique se é uma data válida ou não. O mês será representado por números.
 
-Na tabela abaixo temos a quantidade correta de dias de cada mês:
++ considere os anos bissextos.
+1) São bissextos todos os anos múltiplos de 400, p.ex: 1600, 2000, 2400, 2800...
+2) São bissextos todos os múltiplos de 4 e não de 100, p.ex: 1996, 2000, 2004, 2008, 2012, 2016, 2020...
+3) No ano bissexto Fevereiro tem 29 dias.
 
-Dias por mês
-Meses	Dias
-2	          28 ou 29 (Dependendo se o ano é bissexto)
-4, 6, 9,11	          30
-1, 3, 5, 7, 8, 10, 12	          31
+# Entrada
 
-No ano bissexto Fevereiro tem 29 dias. Um ano será bissexto se uma das duas condições abaixo for verdadeira:
-
-São bissextos todos os anos múltiplos de 400, p.ex: 1600, 2000, 2400, 2800...
-São bissextos todos os múltiplos de 4 e não de 100, p.ex: 1996, 2000, 2004, 2008, 2012, 2016, 2020...
-Todos os demais anos não são bissextos.
-
-Será fornecido três números, o primeiro sendo o dia, o segundo o mês e o terceiro o ano, no formato dd/MM/yyyy. A saída deve ser a palavra valida ou invalida.
+Será fornecido o dia, o mês e o ano, no formato dd/MM/yyyy. A saída deve ser a palavra valida ou invalida.
