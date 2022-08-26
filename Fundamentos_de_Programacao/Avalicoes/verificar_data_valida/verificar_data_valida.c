@@ -15,27 +15,37 @@ int main(){
     /* Fim das Flags */
    
    
-    if(dia>31 || mes>12)printf("invalida");
+    if(dia>31 || mes>12)
+        printf("invalida");
     
     else if(ate28_29){
         
-        if(bissexto && dia<=29)printf("valida");
-        else if(dia<=28)printf("valida");
-        else printf("invalida");
+        if(bissexto && dia<=29)
+            printf("valida");
+
+        else if(dia<=28)
+            printf("valida");
+
+        else 
+            printf("invalida");
         
     }
     
     else if(ate30){
         
-        if(dia<=30)printf("valida");
-        else printf("invalida");
+        if(dia<=30)
+            printf("valida");
+        else 
+            printf("invalida");
         
     }
     
     else if(ate31){
         
-        if(dia<=31)printf("valida");
-        else printf("invalida");
+        if(dia<=31)
+            printf("valida");
+        else 
+            printf("invalida");
         
     }
     
