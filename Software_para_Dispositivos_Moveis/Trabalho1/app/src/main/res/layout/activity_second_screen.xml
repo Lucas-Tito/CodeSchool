@@ -48,13 +48,15 @@
         app:layout_constraintGuide_begin="20dp" />
 
     <Button
-        android:id="@+id/button"
-        android:layout_width="91dp"
-        android:layout_height="49dp"
-        android:layout_marginTop="340dp"
+        android:id="@+id/play_btn"
+        android:layout_width="94dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="336dp"
         android:text="@string/play_btn"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline5"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="@+id/guideline7"
+        app:layout_constraintHorizontal_bias="0.53"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
