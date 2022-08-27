@@ -101,6 +101,19 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        btnNextScreen.setOnLongClickListener(new View.OnLongClickListener() {
+
+        @Override
+        public boolean onLongClick(View v){
+
+            Toast.makeText(MainActivity.this, "you clicked me for a long time", Toast.LENGTH_LONG).show();
+            return false;
+
+        }
+
+        });
+
+
     }
 
 
