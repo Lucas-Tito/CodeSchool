@@ -3,6 +3,7 @@ package com.example.trabalho1;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -16,7 +17,6 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.Toast;
-import android.widget.Toolbar;
 
 import java.util.ArrayList;
 
@@ -29,6 +29,11 @@ public class MainActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        toolbar.setTitle("");
+        setSupportActionBar(toolbar);
+
         build_spinner();
         build_autocomplete_countries();
         build_btn_nextScreen();
@@ -41,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
 
     getMenuInflater().inflate(R.menu.main_menu, menu);
-    return true;
+    return super.onCreateOptionsMenu(menu);
 
     }
 
@@ -49,10 +54,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 
-        switch (item.getItemId()){
-            case R.id.item1:
-                Toast.makeText(MainActivity.this, "você clicou no item1", Toast.LENGTH_LONG).show();
-                break;
+        if(item.getItemId() == R.id.settings_btn){
+            Toast.makeText(MainActivity.this, "you clicked in settings", Toast.LENGTH_LONG).show();
         }
 
         return super.onOptionsItemSelected(item);
