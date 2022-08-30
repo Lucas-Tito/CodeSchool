@@ -8,20 +8,20 @@ int binnarySearch(int item){
     while(low <= high){
         
         attempts++;
-        mid = (low + high)/2;    //calcula o mid do vetor
+        mid = (low + high)/2;    //calc mid
         
-        if(mid == item)     //se o item estiver no mid, encerra o while
+        if(mid == item)     //if item is on mid, while stops
             break;         
         /*
-         *Já que o vetor está ordenado, se o elemento no mid for maior que o item
-         *O high passa a ser o mid -1 (é como se todos depois do mid fossem descartados)
-         *Já que de tabela todos são maiores que o item
+         *Given that the group is ordered, if mid is greater than item
+         *High become mid -1 (as if all elements after mid were discarted)
+         *Since these elements are greater than item too
         */ 
         else
             if(mid > item)  
                 high = mid - 1;     
         else                         
-            low = mid + 1;  //se o elemento no mid for menor, o processo é o mesmo, só que dessa vez todos os menores são descartados
+            low = mid + 1;  //if mid is smaller than item, the approach is the same, but this time all the smaller elements are discarted
     }
     printf("\nend number = %d\n", mid);
     return attempts;   
@@ -34,10 +34,10 @@ int main(){
     printf("Enter a number between 0 and 1000000: ");
     int userNumber;
     scanf("%d", &userNumber);
-    
+
+        /* PROCESS */
     int attempts = binnarySearch(userNumber);
     printf("The computer needed %d attempts to guess your number", attempts);
 
-    printf("\nuser number = %d\n", userNumber);
     return 0;
 }
