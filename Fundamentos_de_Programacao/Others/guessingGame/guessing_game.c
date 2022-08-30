@@ -3,28 +3,28 @@
 
 int binnarySearch(int item){
     
-    int inicio=0, fim=1000000, count=0, meio;
+    int low=0, high=1000000, attempts=0, mid;
     
-    while(inicio <= fim){
+    while(low <= high){
         
-        count++;
-        meio = (inicio + fim)/2;    //calcula o meio do vetor
+        attempts++;
+        mid = (low + high)/2;    //calcula o mid do vetor
         
-        if(vetor[meio] == item)     //se o item estiver no meio, encerra o while
+        if(mid == item)     //se o item estiver no mid, encerra o while
             break;         
         /*
-         *Já que o vetor está ordenado, se o elemento no meio for maior que o item
-         *O fim passa a ser o meio -1 (é como se todos depois do meio fossem descartados)
+         *Já que o vetor está ordenado, se o elemento no mid for maior que o item
+         *O high passa a ser o mid -1 (é como se todos depois do mid fossem descartados)
          *Já que de tabela todos são maiores que o item
         */ 
         else
-            if(vetor[meio] > item)  
-                fim = meio - 1;     
+            if(mid > item)  
+                high = mid - 1;     
         else                         
-            inicio = meio + 1;  //se o elemento no meio for menor, o processo é o mesmo, só que dessa vez todos os menores são descartados
+            low = mid + 1;  //se o elemento no mid for menor, o processo é o mesmo, só que dessa vez todos os menores são descartados
     }
- 
-    return count;   
+    printf("\nend number = %d\n", mid);
+    return attempts;   
 }
 
 
@@ -35,8 +35,9 @@ int main(){
     int userNumber;
     scanf("%d", &userNumber);
     
-    binnarySearch(userNumber);
+    int attempts = binnarySearch(userNumber);
     printf("The computer needed %d attempts to guess your number", attempts);
-    
+
+    printf("\nuser number = %d\n", userNumber);
     return 0;
 }
