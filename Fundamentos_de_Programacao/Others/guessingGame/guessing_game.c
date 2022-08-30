@@ -36,8 +36,14 @@ int main(){
     scanf("%d", &userNumber);
 
         /* PROCESS */
-    int attempts = binnarySearch(userNumber);
-    printf("The computer needed %d attempts to guess your number", attempts);
+    if(userNumber<0 && userNumber> 1000000)
+        printf("\nerror:invalid number provided\n")
+    
+    else{
+        int attempts = binnarySearch(userNumber);
+        printf("The computer needed %d attempts to guess your number", attempts);
+    }
+
 
     return 0;
 }
