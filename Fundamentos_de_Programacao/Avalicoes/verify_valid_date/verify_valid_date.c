@@ -2,53 +2,43 @@
 
 int main(){
     
-    int dia, mes, ano;
-    scanf("%d/%d/%d", &dia, &mes, &ano);
-    
-    /* Flags */
-    
-    int bissexto = (ano%400==0) || (ano%4==0 && ano%100!=0);
-    int ate28_29 = mes==2;
-    int ate30 = mes==4 || mes==6 || mes==9 || mes==11;
-    int ate31 = mes==1 || mes==3 || mes==5 || mes==7 || mes==8 || mes==10 || mes==12;
-    
-    /* Fim das Flags */
-   
-   
-    if(dia>31 || mes>12)
-        printf("invalida");
-    
-    else if(ate28_29){
-        
-        if(bissexto && dia<=29)
-            printf("valida");
+    int day, month, year;
+    scanf("%d/%d/%d", &day, &month, &year);
 
-        else if(dia<=28)
-            printf("valida");
+//+-----------------------------------------------------------------------------------------------------+
+    int isLeapYear = (year%400==0) || (year%4==0 && year%100!=0);                                     //|
+    int endsOn28_29 = month==2;                                                                       //|FLAGS  
+    int endsOn30 = month==4 || month==6 || month==9 || month==11;                                     //|
+    int endsOn31 = month==1 || month==3 || month==5 || month==7 || month==8 || month==10 || month==12;//|
+//+-----------------------------------------------------------------------------------------------------+
 
-        else 
-            printf("invalida");
+
+    if(day>31 || month>12) printf("INVALID");
+    
+    else if(endsOn28_29){
+        
+        if(isLeapYear && day<=29) printf("VALID");
+
+        else if(day<=28) printf("VALID");
+
+        else printf("INVALID");
         
     }
     
-    else if(ate30){
+    else if(endsOn30){
         
-        if(dia<=30)
-            printf("valida");
-        else 
-            printf("invalida");
-        
-    }
-    
-    else if(ate31){
-        
-        if(dia<=31)
-            printf("valida");
-        else 
-            printf("invalida");
+        if(day<=30) printf("VALID");
+
+        else printf("INVALID");
         
     }
     
+    else if(endsOn31){
+        
+        if(day<=31) printf("VALID");
+        else printf("INVALID");
+        
+    }
     
     return 0;
 }
