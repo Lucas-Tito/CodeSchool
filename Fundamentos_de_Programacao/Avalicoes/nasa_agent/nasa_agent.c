@@ -7,18 +7,18 @@ int isContained(char stringA[], char stringB[]){
     
 //+-------------------------------------------------------------------------------+
     int stringA_size = 0;                                                       //|
-    while(stringA[stringA_size] != '\0'){                                         //|
-        if(stringA[stringA_size] >= 65 && stringA[stringA_size] <= 90){             //|
-            stringA[stringA_size] = stringA[stringA_size] + 32;                     //| código para descobrir o tamaho das strings
-        }                                                                       //| e convertá-las para lower case
+    while(stringA[stringA_size] != '\0'){                                       //|
+        if(stringA[stringA_size] >= 65 && stringA[stringA_size] <= 90){         //|
+            stringA[stringA_size] = stringA[stringA_size] + 32;                 //| code to get the size of strings
+        }                                                                       //| and convert then to lower case
         stringA_size++;                                                         //|
     }                                                                           //|
-    int stringB_size = 0;                                                     //| 
-    while(stringB[stringB_size] != '\0'){                                     //|
-        if(stringB[stringB_size] >= 65 && stringB[stringB_size] <= 90){     //|
-            stringB[stringB_size] = stringB[stringB_size] + 32;             //|                                                   
+    int stringB_size = 0;                                                       //| 
+    while(stringB[stringB_size] != '\0'){                                       //|
+        if(stringB[stringB_size] >= 65 && stringB[stringB_size] <= 90){         //|
+            stringB[stringB_size] = stringB[stringB_size] + 32;                 //|                                                   
             }                                                                   //|
-        stringB_size++;                                                       //|
+        stringB_size++;                                                         //|
     }                                                                           //|
 //+-------------------------------------------------------------------------------+
 
