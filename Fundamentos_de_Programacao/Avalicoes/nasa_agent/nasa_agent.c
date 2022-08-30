@@ -1,38 +1,39 @@
 #include<stdio.h>
 
-int isContained(char email[], char palavra[]){
+//checks if stringA is contained inside stringB
+int isContained(char stringA[], char stringB[]){
     
     int isContained=0;
     
 //+-------------------------------------------------------------------------------+
-    int tamanhoEmail = 0;                                                       //|
-    while(email[tamanhoEmail] != '\0'){                                         //|
-        if(email[tamanhoEmail] >= 65 && email[tamanhoEmail] <= 90){             //|
-            email[tamanhoEmail] = email[tamanhoEmail] + 32;                     //| código para descobrir o tamaho das strings
+    int stringA_size = 0;                                                       //|
+    while(stringA[stringA_size] != '\0'){                                         //|
+        if(stringA[stringA_size] >= 65 && stringA[stringA_size] <= 90){             //|
+            stringA[stringA_size] = stringA[stringA_size] + 32;                     //| código para descobrir o tamaho das strings
         }                                                                       //| e convertá-las para lower case
-        tamanhoEmail++;                                                         //|
+        stringA_size++;                                                         //|
     }                                                                           //|
-    int tamanhoPalavra = 0;                                                     //| 
-    while(palavra[tamanhoPalavra] != '\0'){                                     //|
-        if(palavra[tamanhoPalavra] >= 65 && palavra[tamanhoPalavra] <= 90){     //|
-            palavra[tamanhoPalavra] = palavra[tamanhoPalavra] + 32;             //|                                                   
+    int stringB_size = 0;                                                     //| 
+    while(stringB[stringB_size] != '\0'){                                     //|
+        if(stringB[stringB_size] >= 65 && stringB[stringB_size] <= 90){     //|
+            stringB[stringB_size] = stringB[stringB_size] + 32;             //|                                                   
             }                                                                   //|
-        tamanhoPalavra++;                                                       //|
+        stringB_size++;                                                       //|
     }                                                                           //|
 //+-------------------------------------------------------------------------------+
 
-    int contChar=0, guardaI=0;
-    for(int i = 0; i < tamanhoEmail; i++){
-        if(email[i] == palavra[0]) {
-            contChar++;
-            guardaI=i;
-            for(int j = 1; j < tamanhoPalavra; j++){
+    int charCount=0, track_i=0;
+    for(int i = 0; i < stringA_size; i++){
+        if(stringA[i] == stringB[0]) {
+            charCount++;
+            track_i=i;
+            for(int j = 1; j < stringB_size; j++){
               
-              for(int k=guardaI; k<tamanhoEmail; k++){
-                  if(email[k] == palavra[j]){ 
+              for(int k=track_i; k<stringA_size; k++){
+                  if(stringA[k] == stringB[j]){ 
                     
-                    contChar++;
-                    guardaI=k;
+                    charCount++;
+                    track_i=k;
                     break;
                       
                   }
@@ -40,11 +41,11 @@ int isContained(char email[], char palavra[]){
                 
             }
             
-            if(contChar == tamanhoPalavra) {
+            if(charCount == stringB_size) {
                 isContained=1;
                 break;
             }else{
-            contChar = 0;
+            charCount = 0;
           }
         }
     }
@@ -55,14 +56,16 @@ int isContained(char email[], char palavra[]){
 
 int main(){
     
-    char email[201];
-    scanf("%[^\n]", email);
+    printf("Enter First String:\n");
+    char stringA[201];
+    scanf("%[^\n]", stringA);
     
-    char palavra[21];
-    scanf("%s", palavra);
+    printf("\nEnter Second String:\n");
+    char stringB[21];
+    scanf("%s", stringB);
     
-    if(isContained(email, palavra)) printf("Sim");
-    else printf("Nao");
+    if(isContained(stringA, stringB)) printf("\nStringB is contained in StringA");
+    else printf("\nThe string isn't contained in String A");
     
     
     return 0;
