@@ -3,22 +3,26 @@
 int main(){
     
         /* INPUT */
-    int LeC;                //linhas e colunas
-    scanf("%d", &LeC);
     
-    int matriz_quadrada[LeC][LeC];
-    for(int l=0; l<LeC; l++) for(int c=0; c<LeC; c++) scanf("%d", &matriz_quadrada[l][c]);
+    printf("Enter ONE NUMBER to determine the lines and coluns: ");
+    int LnC;    //lines and coluns (they need to have the same value)
+    scanf("%d", &LnC);
+    
+    printf("Enter the matrix elements: ");
+    int square_matrix[LnC][LnC];
+    for(int l=0; l<LnC; l++) 
+        for(int c=0; c<LnC; c++)
+            scanf("%d", &square_matrix[l][c]);
     
         /* PROCESS */
-    int soma_diagonal=0;
-    for(int l=0; l<LeC; l++){
-    
-        soma_diagonal += matriz_quadrada[l][l]; 
+    int diagonal_sum=0;
+    for(int l=0; l<LnC; l++)
+        diagonal_sum += square_matrix[l][l]; 
        
-    }
+    
         
         /* OUTPUT */
-    printf("%d", soma_diagonal);
+    printf("\nResult: %d", diagonal_sum);
     
     return 0;
 }
