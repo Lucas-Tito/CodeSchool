@@ -1,7 +1,7 @@
 # Description
 
 + user provide a square matrix
-+ program compute the sum of the elements on the diagonal
++ program compute the sum of the elements on the main diagonal
 
 <br><br>
 
