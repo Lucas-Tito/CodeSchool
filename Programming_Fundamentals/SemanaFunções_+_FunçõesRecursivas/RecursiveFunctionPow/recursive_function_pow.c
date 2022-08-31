@@ -8,13 +8,16 @@ int calcPow(int base, int power){
     else Pow = base*calcPow(base, power-1);
     
     return Pow;
+
 }
 
 int main(){
     
+    printf("Inform base and power: ");
     int base, power;
     scanf("%d %d", &base, &power);
     
+    printf("\nThis is the result: ");
     printf("%d", calcPow(base, power));
     
     
