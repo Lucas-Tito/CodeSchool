@@ -38,7 +38,7 @@ struct BTree{
         clone(ss, &root);
     }
 
-    ~BTree(){ //destrutor da árvore
+    ~BTree(){ //tree destructor
         __destroy(this->root);
     }
 
@@ -54,20 +54,20 @@ struct BTree{
         __bshow(this->root);
     }
 
-    void __bshow(Node * node, string heranca = ""){
+    void __bshow(Node * node, string heritage = ""){
         if(node != nullptr && (node->left != nullptr || node->right != nullptr))
-            __bshow(node->left , heranca + "l");
-        for(int i = 0; i < (int) heranca.size() - 1; i++)
-            cout << (heranca[i] != heranca[i + 1] ? "│   " : "    ");
-        if(heranca != "")
-            cout << (heranca.back() == 'l' ? "┌───" : "└───");
+            __bshow(node->left , heritage + "l");
+        for(int i = 0; i < (int) heritage.size() - 1; i++)
+            cout << (heritage[i] != heritage[i + 1] ? "│   " : "    ");
+        if(heritage != "")
+            cout << (heritage.back() == 'l' ? "┌───" : "└───");
         if(node == nullptr){
             cout << "#" << endl;
             return;
         }
         cout << node->value << endl;
         if(node != nullptr && (node->left != nullptr || node->right != nullptr))
-            __bshow(node->right, heranca + "r");
+            __bshow(node->right, heritage + "r");
     }
 
     void show_in_order(){
@@ -85,13 +85,13 @@ struct BTree{
     }
     int sum(Node * root){
         
-        int soma = root -> value;
+        int sum = root -> value;
         if(root -> left != nullptr)
-            soma = soma + sum(root -> left);
+            sum = sum + sum(root -> left);
         if(root -> right != nullptr)
-            soma = soma + sum(root -> right);
+            sum = sum + sum(root -> right);
         
-        return soma;
+        return sum;
         
     }
 
