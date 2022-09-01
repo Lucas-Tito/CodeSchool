@@ -1,0 +1,14 @@
+translate:
+
+    BinaryTree
+        >Loading_Tree_Via_String
+        
+
+    Linked_List
+
+    Queue
+
+    Sort_Algorithm
+
+    Stack
+    
