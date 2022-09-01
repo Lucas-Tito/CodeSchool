@@ -12,9 +12,11 @@ int calcPow(int base, int power){
 
 int main(){
     
+    printf("Enter base and power: \n");
     int base, power;
     scanf("%d %d", &base, &power);
     
+    printf("The result is: ");
     printf("%d", calcPow(base, power));
     
     
