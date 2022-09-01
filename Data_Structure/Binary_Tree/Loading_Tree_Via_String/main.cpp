@@ -4,15 +4,15 @@
 using namespace std;
 
 
-/*              FUNÇÕES BÁSICAS QUE DESENVOLVI PRA ENTENDER BIN TREE
+/*              BASIC FUNCTIONS THAT I DEVELOIPED TO UNDERSTAND BINARY TREE
 class Node{
     
     private:
-       No *left, *right;
+       Node *left, *right;
        int key;
        
     public:
-        No(int keyToAdd){
+        Node(int keyToAdd){
             
             key = keyToAdd;
             left = NULL;
@@ -24,11 +24,11 @@ class Node{
             return key;
         }
         
-        No* getLeft(){
+        Node* getLeft(){
             return left;
         }
         
-        No* getRight(){
+        Node* getRight(){
             return left;
         }
         
@@ -52,26 +52,26 @@ class Tree{
             root = NULL;
         }
         
-        void inserir(int key){
+        void insert(int key){
             if(root == NULL)
                 root = new Node(key);
             else
-                inserirAux(root, key)
+                insertAux(root, key)
         }
         
-        inserirAux(Node*  node, int key){
+        insertAux(Node* node, int key){
             
-            if(key < node->getChave()){     //se o valor for menor que o do nó, é inserido a esquerdo
+            if(key < node->getChave()){     //if the value is smaller than the node, it's inserted at left.
                 if(node->getLeft() == NULL){
                     
                     Node* new_node = new Node(key);
                     node->setLeft(new_node);
                     
                 }
-                else    //se o nó atual tiver um nó a esquerda
-                    inserirAux(node->getLeft(), key)
+                else    //if current node has a node at left
+                    insertAux(node->getLeft(), key)
             }                                       
-            else if(key > node->getKey()){  //se o valor for maior que o do nó, é inserido a direita
+            else if(key > node->getKey()){  //if value is greater than the one in the node, it's inserted at right
                 if(node->getRight() == NULL){
                     
                     Node* new_node = new Node(key);
@@ -79,7 +79,7 @@ class Tree{
                     
                 }
                 else
-                    inserirAux(node->getLeft(), key);
+                    insertAux(node->getLeft(), key);
             }
                 
         }
@@ -126,7 +126,7 @@ struct BTree{
         clone(ss, &root);
     }
 
-    ~BTree(){ //destrutor da árvore
+    ~BTree(){ //tree destructor
         __destroy(this->root);
     }
 
@@ -142,20 +142,20 @@ struct BTree{
         __bshow(this->root);
     }
 
-    void __bshow(Node * node, string heranca = ""){
+    void __bshow(Node * node, string heritage = ""){
         if(node != nullptr && (node->left != nullptr || node->right != nullptr))
-            __bshow(node->left , heranca + "l");
-        for(int i = 0; i < (int) heranca.size() - 1; i++)
-            cout << (heranca[i] != heranca[i + 1] ? "│   " : "    ");
-        if(heranca != "")
-            cout << (heranca.back() == 'l' ? "┌───" : "└───");
+            __bshow(node->left , heritage + "l");
+        for(int i = 0; i < (int) heritage.size() - 1; i++)
+            cout << (heritage[i] != heritage[i + 1] ? "│   " : "    ");
+        if(heritage != "")
+            cout << (heritage.back() == 'l' ? "┌───" : "└───");
         if(node == nullptr){
             cout << "#" << endl;
             return;
         }
         cout << node->value << endl;
         if(node != nullptr && (node->left != nullptr || node->right != nullptr))
-            __bshow(node->right, heranca + "r");
+            __bshow(node->right, heritage + "r");
     }
 
     void show_in_order(){
