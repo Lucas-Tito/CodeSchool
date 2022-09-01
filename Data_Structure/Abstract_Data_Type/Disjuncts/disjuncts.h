@@ -1,11 +1,11 @@
-#ifndef DISJUNTOS_HPP
-#define DISJUNTOS_HPP
+#ifndef DISJUNCTS_HPP
+#define DISJUNCTS_HPP
 
 #include <bits/stdc++.h>
 
 using namespace std;
 
-class Disjuntos{
+class Disjuncts{
 
     private:
     
@@ -14,18 +14,18 @@ class Disjuntos{
     
     public:
     
-    Disjuntos(int n){ 
+    Disjuncts(int n){ 
         
        
     
     }
 
-    void une(int x, int y){
+    void unite(int x, int y){
        
        
     }
 
-    int mesmo(int x, int y){
+    int same(int x, int y){
         
     }
 };
