@@ -1,12 +1,12 @@
-<h1 align="center">Descrição</h1>
+<h1 align="center">Description</h1>
 
 <p align="center">
-Este código une conjuntos e tamém informa se dois conjuntos são iguais.
+This code unite groups and tell if the groups are the same.
 </p>
 
 <br> <br>
-## Entrada
+## Input
 
 
-## Saída
+## Output
 
