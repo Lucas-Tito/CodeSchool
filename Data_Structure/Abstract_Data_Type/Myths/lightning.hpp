@@ -1,27 +1,27 @@
-#ifndef RAIOS_HPP
-#define RAIOS_HPP
+#ifndef LIGHTNING_HPP
+#define LIGHTNING_HPP
 
 #include <bits/stdc++.h>
 #include <vector>
-#include<algorithm>
+#include <algorithm>
 
 using namespace std;
 
-struct quadrante{
+struct quadrant{
     int x;
     int y;
 };
 
-class Raios{
+class Lightnings{
 
     private:
     
     int cityLength, cityWidth;
-    vector<quadrante> vec;
+    vector<quadrant> vec;
        
     public:
     
-    Raios(int n, int m){ 
+    Lightnings(int n, int m){ 
         
         cityLength = n;
         cityWidth = m;
@@ -30,14 +30,14 @@ class Raios{
 
     void add(int x, int y){
 
-    quadrante qToAdd;
-    qToAdd.x = x;
-    qToAdd.y = y;
-    vec.push_back(qToAdd);
+        quadrant qToAdd;
+        qToAdd.x = x;
+        qToAdd.y = y;
+        vec.push_back(qToAdd);
         
     }
 
-    int mesmo_lugar(){
+    int same_place(){
     
         int areInSamePlace = 0;        
     
@@ -48,7 +48,7 @@ class Raios{
                     break;
                 }
             if(areInSamePlace == 1)
-                break;  //break pro primeiro for parar de incrementar se uma duplicata for achada
+                break;  //break for the first for stop incrementing if a duplicate is found
         }
 
         return areInSamePlace;

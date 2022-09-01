@@ -6,15 +6,15 @@
 <h1 align="center">Descrição</h1>
 
 <p align="center">
-João é um grande caçador de mitos. Ele vai apresentar o mito que diz que "os raios não caem duas vezes no mesmo lugar". A cidade de Quixadá é a cidade com a maior ocorrência de raios do mundo. João conseguiu um relatório com as ocorrências de cada raio na cidade nos últimos 5 anos.
+John is a great myth hunter. He will present the myth that "lightning does not strike twice in the same place". The city of Quixadá is the city with the highest occurrence of lightning in the world. John got a report with the occurrences of each lightning in the city in the last 5 years.
 <br>
-A cidade de Quixadá tem 500 metros de largura e 500 comprimento, ela será dividida em 250.000 quadrantes. O sistema de registro armazena o quadrante em que o raio caiu. Como os quadrantes são relativamente pequenos, João decidiu que se dois raios caírem no mesmo quadrante então pode-se considerar que caíram no mesmo lugar.
+The city of Quixadá is 500 meters wide and 500 meters long, it will be divided into 250,000 quadrants. The recording system stores the quadrant in which the lightning struck. As the quadrants are relatively small, John decided that if two rays fall in the same quadrant then they can be considered to have fallen in the same place.
 </p>
 
 <br> <br>
-## Entrada
-A primeira linha da entrada contém um número inteiro representando o número de registros de raios no relatório.<br>
-Cada uma das NN linhas seguintes contém 2 números inteiros X, YX,Y representando o registro de um raio que caiu no quadrante cujas coordenadas são (X, Y)(X,Y)
+## Input
+The first line of the input contains an integer representing the number of lightnings records in the report.<br>
+Each of the following NN lines contains 2 integers X, YX,Y representing the record of a lightning that struck in the quadrant whose coordinates are (X, Y)(X,Y)
 
 ex: <br>
 5 <br>
@@ -24,7 +24,7 @@ ex: <br>
 4 2 <br>
 4 4 <br>
 
-## Saída
-O programa imprime o número 0 se nenhum raio caiu no mesmo lugar, ou o número 1 caso contrário.<br>
-(obs: 1 é imprimido mesmo que haja mais do que 1 par de raios que caíram no mesmo lugar.)
+## Output
+The program prints the number 0 if no lightning strikes in the same place, or the number 1 otherwise.<br>
+(Note: 1 is printed even if there are more than 1 pair of lightning bolts that have landed in the same place.)
 
