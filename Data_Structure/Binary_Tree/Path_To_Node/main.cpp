@@ -59,28 +59,28 @@ struct BTree{
     }
 
     string _find_path(Node * node, int value){
-        string linha, aux;
+        string line, aux;
 
         if (node == nullptr) { return "!"; }
         if (node->value == value) { return "x"; }
     
-        linha = "l" + _find_path(node->left,value);
-        aux = linha.back();
+        line = "l" + _find_path(node->left,value);
+        aux = line.back();
         if (aux == "x") {
-            return linha;
+            return line;
         }
-        linha.pop_back();
-        if (node->left == nullptr) { linha.pop_back(); }
+        line.pop_back();
+        if (node->left == nullptr) { line.pop_back(); }
     
-        linha = "r" + _find_path(node->right,value);
-        aux = linha.back();
+        line = "r" + _find_path(node->right,value);
+        aux = line.back();
         if (aux == "x") {
-            return linha;
+            return line;
         }
-        linha.pop_back();
-        if (node->right == nullptr) { linha.pop_back(); }
+        line.pop_back();
+        if (node->right == nullptr) { line.pop_back(); }
     
-        return linha;
+        return line;
     }
 };
 

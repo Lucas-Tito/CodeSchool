@@ -1,18 +1,18 @@
 ![image](https://user-images.githubusercontent.com/61806906/180619774-ebf70880-76bb-4d68-9d68-887c95962f76.png)
 
 <br> <br>
-## Entrada
-+ linha 1: o serial de uma árvore binária
-+ linha 2: um valor de nó
+## INPUT
++ line 1: binary tree serial.
++ line 2: a node valuel.
 
-## Saída
-se o valor existe:
-+ mostre o caminho da raiz até o nó,
-+ indicando ‘l’ ou ‘r’ se o caminho é pelo filho da esquerda ou da direita.
-+ ponha um ‘x’ para quando achar o nó.
+## OUTPUT
+if value exists:
++ show path from root to node,
++ indicating ‘l’ or ‘r’ if path is via left son or right son.
++ put a ‘x’ when node is found.
 
-Se o valor não existir na árvore
-+ imprima “!”
+If value doesn't exists
++ print “!”
 
-Limitação
-+ Você deve percorrer a árvore UMA única vez para obter os caminhos e montar o caminho através do retorno da função.
+Limitation
++ You need go through the tree ONLY ONE time to get the paths and build the path r o caminho through the function return.
