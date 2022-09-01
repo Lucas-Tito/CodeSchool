@@ -13,13 +13,13 @@ int calcH(int m, int n){
 
 int main(){
     
+    printf("Enter a numberA and B: ");
     int m, n;
     scanf("%d %d", &m, &n);
     
-    printf("%d", calcH(m, n));
-    
-    
-    
+    printf("\nThis is the result of the function: ");
+    printf("%d", calcH(m, n));   
     
     return 0;
+    
 }
