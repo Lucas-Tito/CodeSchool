@@ -5,40 +5,40 @@
 using namespace std;
 
 
-struct pilha {
+struct stack {
     
     int count=0;
     stack<int> storage;
-    stack<int> mimValue;
+    stack<int> minValue;
     
     void push(int x){
         storage.push(x);
         
         if(count==0)
-            mimValue.push(x);
+            minValue.push(x);
         else
-            if(mimValue.top()>x)
-                mimValue.push(x);
+            if(minValue.top()>x)
+                minValue.push(x);
         
         count++;
     }
     
     void pop(){
-        if(mimValue.size()>1)
-            mimValue.pop();
+        if(minValue.size()>1)
+            minValue.pop();
     }
     
     int getMin(){
-        return mimValue.top();
+        return minValue.top();
     }
     
-} typedef pilha;
+} typedef stack;
 
 
 int main(){
     int n;
     cin >> n;
-    pilha A;
+    stack A;
     int operation, elementToAdd;
     for(int i=0; i<n; i++){
         cin >> operation;

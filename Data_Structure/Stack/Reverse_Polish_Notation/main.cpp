@@ -8,31 +8,31 @@ string expr;
 int pos = 0;
 
 /*
- * Esta função é responsável por separar os tokens
- * (token sendo um número ou uma operação)
- * ela sempre só retornará um destes tokens
- * para não retornar valores iguais, toda vez que chamada
- * acrescenta-se um count chamado de pos
+ * This function sepates the tokens
+ * (token is a number or an operation)
+ * this function always return one of these tokens
+ * to prevent returning duplicate values, when the function is called
+ * pos is incremented
 */
 string get_token(){
     string token = "";
     
-    //adiciona "$" em token para indicar o final
+    //adds "$" in token to indicate the end
     if(pos == expr.size() ){
         token = "$";
         return token;
     }
     
-    //pula os espaços
+    //skips the spaces
     while( expr[pos] == ' ') pos++;
 
-    //se algum token for achado, este é adicionado na string de tokens
+    //if the token is found, it's added in the tokens string
     if(expr[pos] == '+' || expr[pos] == '-' || expr[pos] == '/' || expr[pos] == '*'){
         token += expr[pos];
         pos++;
         return token;
     }
-    //se for um dígito, todos os dígitos não separados por espaço são adicionados em token
+    //if it's a digit, all digits not separate by space are added in token
     else if(isdigit(expr[pos]) ){
         while( isdigit(expr[pos]) ){
             token += expr[pos];
@@ -47,98 +47,97 @@ string get_token(){
 
 int main(){
     
-    //preenche a string expr que contém os números e operações
+    //fills the string expr that contains the numbers and operations
     getline( cin, expr );
     stack <int> numbers;
     string token = get_token();
     
     
     /*
-     * A cada vez que o while é percorrido, é chamada a função get_token
-     * se um dígito for achado, este é adicionado em na pilha
-     * Entretanto, caso o elemento achado seja um operando
-     * é verificado se a flag que aponta se alguma operação foi feita
-     * Caso tenha, é só realizar a operação com o elemento no topo da pilha e o que está guardado em "resultado"
-     * Se não, é realizada a operação com os dois números no topo da pilha
+     * Each time the program goes through the while, the get_token function is called
+     * if a digit is found, it's added to the stack
+     * However, in case a operand is found
+     * it's verified if a flag tells that a operation were done
+     * In positive case, the program just need to do the operation with the element on top of the stack and the one stored at "result"
+     * Else, the operation is done with the two numbers at the top of the stack
     */
-    int operando1, operando2, resultado=0, atLeastOneOPWasDone=0;
+    int perando1, operand2, result=0, atLeastOneOPWasDone=0;
     while(token != "$"){
                 
         if(token == "+"){
 
-            operando1 = numbers.top();            
+            operand1 = numbers.top();            
             if(!numbers.empty())
                 numbers.pop();
             
             if(atLeastOneOPWasDone == 0){
-                operando2 = numbers.top();            
+                operand2 = numbers.top();            
                 if(!numbers.empty())
                     numbers.pop();
-                    resultado += operando1+operando2;
+                    result += operand1+operand2;
             }
             else
-                resultado += operando1;
+                result += operand1;
             
             atLeastOneOPWasDone=1;
         
         }
         else if(token == "-"){
             
-            operando1 = numbers.top();            
+            operand1 = numbers.top();            
             if(!numbers.empty())
                 numbers.pop();
             
             if(atLeastOneOPWasDone == 0){
-                operando2 = numbers.top();            
+                operand2 = numbers.top();            
                 if(!numbers.empty())
                     numbers.pop();
-                    resultado += operando1-operando2;
+                    result += operand1-operand2;
             }
             else
-                resultado -= operando1;
+                result -= operand1;
             
             atLeastOneOPWasDone=1;
             
         }
         else if(token == "*"){
         
-            operando1 = numbers.top();            
+            operand1 = numbers.top();            
             if(!numbers.empty())
                 numbers.pop();
             
             if(atLeastOneOPWasDone == 0){
-                operando2 = numbers.top();            
+                operand2 = numbers.top();            
                 if(!numbers.empty())
                     numbers.pop();
-                    resultado += operando1*operando2;
+                    result += operand1*operand2;
             }
             else
-                resultado *= operando1;
+                result *= operand1;
             
             atLeastOneOPWasDone=1;
         
         }
         else if(token == "/"){
             
-            operando1 = numbers.top();            
+            operand1 = numbers.top();            
             if(!numbers.empty())
                 numbers.pop();
             
             if(atLeastOneOPWasDone == 0){
-                operando2 = numbers.top();            
+                operand2 = numbers.top();            
                 if(!numbers.empty())
                     numbers.pop();
-                    resultado += operando1/operando2;
+                    result += operand1/operand2;
             }
             else
-                resultado /= operando1;
+                result /= operand1;
             
             atLeastOneOPWasDone=1;
         
         }
         else
-            numbers.push( atoi(token.c_str() ) );   //atoi converte para int
-        
+            numbers.push( atoi(token.c_str() ) );   //atoi converts to int        
            
 
         token = get_token();
@@ -146,7 +145,7 @@ int main(){
     }
     
     
-    cout << resultado << endl;
+    cout << result << endl;
     
     return 0;
 

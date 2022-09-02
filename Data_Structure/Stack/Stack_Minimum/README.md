@@ -1,13 +1,14 @@
-<h1 align="center">Descrição</h1>
+<h1 align="center">Description</h1>
 
 <p align="center">
-Este código retorna o menor elemento de um vetor utilizando pilha para armazenar este menor valor durante a criação do próprio vetor
+This code returns the smaller element of a vector using a stack to store this minimum value during the creation of the vector.
 </p>
 
 <br> <br>
-## Entrada
-A primeira linha da entrada contém um inteiro N representando o número de operações realizadas com a pilha. <br>
-Cada operação será descrita por um inteiro e um parâmetro:
+## Input
+The first line has a integer N representing the amount of operations done with the stack. <br>
+
+Each operation will be discribed by a integer and a paramater:
 
 + 1 X : push(X)
 + 2 : pop()
@@ -24,5 +25,5 @@ ex: <br>
 2 <br>
 3 <br>
 
-## Saída
-O programa imprime o resultado das operações getmin().
+## Output
+The program prints the result of the getmin() operations.
