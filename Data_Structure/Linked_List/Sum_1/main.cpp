@@ -40,25 +40,25 @@ ListNode* populateList(){
 
 ListNode * insert_back(ListNode ** head, int val){
     
-    // é criado o nó que será inserido no final
+    //a node is created to be inserted into the end
     ListNode * new_node = new ListNode(); 
     new_node->val = val;  
     new_node->next = NULL;  
     
-    // last é usado para percorrer a list 
+    //last is used to go through the list 
     ListNode *last = *head; 
     
-    //se a lista for vazia, o novo nó é posto em head
+    //if the list is empty, the new node is putted into head
     if (*head == NULL){  
         *head = new_node;  
         return *head;  
     }  
     
-    //procura pelo último elemento da lista
+    //searchs for the last list element
     while (last->next != NULL)
         last = last->next;  
     
-    //insere o novo nó depois do último nó da lista 
+    //insert the new node after the last node 
     last->next = new_node;  
     
     return *head;  
@@ -76,11 +76,11 @@ void print_list(ListNode * head){
 
 ListNode * reverseList(ListNode * head){
 
-    if(head == nullptr || head->next == nullptr) // tratamento para lista vazia ou de tamanho 1
+    if(head == nullptr || head->next == nullptr) //handling for the empty list or with size 1
         return head;
         
     else{
-        ListNode * ptr; //usado para percorrer a lista
+        ListNode * ptr; //used to go through list
         int valor = head->val;
         ptr = reverseList(head->next);
         delete head;
@@ -93,8 +93,8 @@ ListNode * reverseList(ListNode * head){
 
 
 /*
- * Função criada para contar as ocorrências do número 9
- * após o nó passado por parâmetro
+ * Function created to count the occurrences of 9
+ * after the node given in parameter
 */
 int howMany9sAfter(ListNode * head){
     
@@ -120,27 +120,27 @@ ListNode* someUm(ListNode *head){
             break;
         }
         
-        //se o valor for = 9    
+        //if value is equal to 9    
         else{
             int qtdDeNoves = howMany9sAfter(ptr);
 
-            //se não há nenhum nove depois do nove atual
+            //if there isn't any nine after the current nine
             if(qtdDeNoves == 0){
                
-                //se existir um nó depois do nó atual
+                //if only one node exists after the current node
                 if(ptr->next != nullptr){
                     ptr->val = 0;
                     ptr->next->val+=1;
                     break; 
                 }
-                //se não é preciso criar um novo nó
+                //else it's necessary to create a new node
                 else{
                     ptr->val = 0;
                     insert_back(&head, 1);
                     break;
                 }
             }
-            //se há um ou + noves depois do nove atual 
+            //if there is one or more nines after the current nine
             else
                 ptr->val = 0;
             
@@ -154,10 +154,10 @@ ListNode* someUm(ListNode *head){
 int main(){
     
     ListNode * head = populateList();
-    head = reverseList(head);  //inverte a lista 
+    head = reverseList(head);  //inverts the list 
     head = someUm(head);
 
-    head = reverseList(head);  //desinverte a lista
+    head = reverseList(head);  //undo invert
     print_list(head);
     
     return 0;    

@@ -19,25 +19,25 @@ class ListNode {
 
 ListNode * insert_back(ListNode ** head, int val){
     
-    // é criado o nó que será inserido no final
+    //it's created a node that will be inserted on the end
     ListNode * new_node = new ListNode(); 
     new_node->val = val;  
     new_node->next = NULL;  
     
-    // last é usado para percorrer a list 
+    //last is used to go through the list 
     ListNode *last = *head; 
     
-    //se a lista for vazia, o novo nó é posto em head
+    //if the list is empty, the new node is putted into head
     if (*head == NULL){  
         *head = new_node;  
         return *head;  
     }  
     
-    //procura pelo último elemento da lista
+    //searchs for the last element on the list
     while (last->next != NULL)
         last = last->next;  
     
-    //insere o novo nó depois do último nó da lista 
+    //insert new node after last node on the list 
     last->next = new_node;  
     
     return *head;  
@@ -48,37 +48,37 @@ ListNode * insert_back(ListNode ** head, int val){
 ListNode* oddEvenList(ListNode* head, int n){
     
     int count =0;
-    ListNode * par=nullptr;
-    ListNode * impar=nullptr;
+    ListNode * even=nullptr;
+    ListNode * odd=nullptr;
     
-    //guarda os valores dos índices ímpares e pares em suas respectivas listas
+    //keeps the values of the odd and even indexes in their respectives lists
     for(ListNode * ptr = head; ptr != nullptr; ptr = ptr->next){
         if(count % 2 == 0)
-            insert_back(&par, ptr->val);
+            insert_back(&even, ptr->val);
         else
-            insert_back(&impar, ptr->val);
+            insert_back(&odd, ptr->val);
 
         count++;
     }
     
-    /*TESTE
-    cout<< endl << "ESTE É O VETOR DE ÍMPARES" << endl;
-    for(ListNode * ptr = impar; ptr != nullptr; ptr = ptr->next)
+    /*TEST
+    cout<< endl << "THIS IS THE ODD VECTOR" << endl;
+    for(ListNode * ptr = odd; ptr != nullptr; ptr = ptr->next)
         cout << ptr->val << endl;
         
-    cout<< endl << "ESTE É O VETOR DE PARES" << endl;
-    for(ListNode * ptr = par; ptr != nullptr; ptr = ptr->next)
+    cout<< endl << "THIS IS THE EVEN VECTOR" << endl;
+    for(ListNode * ptr = even; ptr != nullptr; ptr = ptr->next)
         cout << ptr->val << endl;
     */
     
-    head = nullptr;     //limpa a lista
+    head = nullptr;     //clears list
     
-    //insere os valores pares em head
-    for(ListNode * ptr = par; ptr != nullptr; ptr = ptr->next)
+    //insert even values into head
+    for(ListNode * ptr = even; ptr != nullptr; ptr = ptr->next)
        insert_back(&head, ptr->val);
     
-    //insere os valores impares em head
-    for(ListNode * ptr = impar; ptr != nullptr; ptr = ptr->next)
+    //insert odd values into head
+    for(ListNode * ptr = odd; ptr != nullptr; ptr = ptr->next)
        insert_back(&head, ptr->val);
         
 
@@ -106,7 +106,7 @@ int main(){
     head = oddEvenList(head, n);
     
     /*TESTE
-    cout << endl << "ESTE É O VETOR FINAL" << endl;
+    cout << endl << "THIS IS THE FINAL VECTOR" << endl;
     */
     for(ListNode * ptr = head; ptr != nullptr; ptr = ptr->next)
         cout << ptr->val << endl;

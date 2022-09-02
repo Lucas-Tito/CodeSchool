@@ -1,14 +1,14 @@
-<h1 align="center">Descrição</h1>
+<h1 align="center">Description</h1>
 <br><br>
 
-Dado o nó cabeça de uma lista encadeada simples, agrupe todos os nós com índices ímpares seguidos pelos nós com índices pares e retorne a lista reordenada. O primeiro nó é considerado ímpar e o segundo nó é par e assim por diante. Observe que a ordem relativa dentro dos grupos pares e ímpares deve permanecer como estava na entrada. Você deve resolver o problema em O(1) complexidade de espaço extra e complexidade de tempo O(n).
+Given the head of a simple linked list, agroup all the nodes with odd and even indexes and return the reordered list. The first node is considered odd and the second node is even and so on. Not that the relative order inside the odd and even groups need too stay how it where on input. You need to solve this problem in O(1) complexity of extra space and O(n) complexity of time.
 
 <br>
 
 ![image](https://user-images.githubusercontent.com/61806906/180613891-f0e259fb-6d41-46df-b938-30074ec05422.png)
 
 <br> <br>
-## Entrada
+## Input
 head = [2,1,3,5,6,4,7]
-## Saída
+## Output
 [2,3,6,7,1,5,4]

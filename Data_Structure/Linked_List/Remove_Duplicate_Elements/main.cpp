@@ -19,20 +19,20 @@ ListNode* deleteDuplicates(ListNode* head) {
     ListNode * ptr = head;
     ListNode * ptr2 = nullptr;
     
-    while(ptr != nullptr && ptr->next != nullptr){  //verifica se a lista está vazia
+    while(ptr != nullptr && ptr->next != nullptr){  //verify if list is empty
         ptr2 = ptr;
         
         while(ptr2->next != nullptr){       
-            //se elemento atual é igual ao proximo, o valor do próximo é deletado
+            //if the current element is equal to the next, the value of the next is deleted
             if(ptr->val == ptr2->next->val){    
                 ListNode * aux = ptr2->next;    
                 ptr2->next = ptr2->next->next;  
                 delete aux;                     
             }else{
-                ptr2 = ptr2->next; //se a condição for falsa o segundo ponteiro é incrementado
+                ptr2 = ptr2->next; //if the condition is false the second pointer is incremented
             }
         }
-        ptr = ptr->next;    //incrementado quando nenhum elemento é igual ao termo atual
+        ptr = ptr->next;    //incrementing when none of the elements is equal to the current term
     }
         
             

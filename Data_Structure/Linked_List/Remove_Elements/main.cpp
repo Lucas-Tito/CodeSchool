@@ -18,23 +18,23 @@ class ListNode {
 ListNode* removeElements(ListNode* head, int val) {
     
 /*
- *head é o primeiro elemento de uma lista encadeada
- *já tail, é o último elemento de uma lista encadeada
+ *head is the first element of a linked list
+ *tail is the last one
 */
     
-    //enquanto o valor em head for equivalente a val 
+    //while the value in head is equal to val 
     while(head != NULL && head->val == val)
-        head = head->next;  // head passa a apontar para 1 depois do que esta apontava antes
+        head = head->next;  //head now points to one element after of the value it pointed before
     
-    ListNode * curr = head; //armazena o valor atual que está sendo verificado da lista encadeada
+    ListNode * curr = head; //stores the current value that is being verified
     
         
     while(curr != NULL && curr->next != NULL){
         
-        //if o valor do nó atual seja equivalente a val, este nó é deletado
+        //if the value of the current node is equal to val, the node is deleted
         if(curr->next->val == val)
             curr->next = curr->next->next;
-        //se não avançamos um nó
+        //else we advance one node
         else
             curr = curr->next;
         

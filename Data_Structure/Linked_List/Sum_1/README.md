@@ -1,12 +1,12 @@
-<h1 align="center">Descrição</h1>
+<h1 align="center">Description</h1>
 
 <p align="center">
-Considere um número N com até 1000 dígitos representado como uma lista encadeada tal que cada dígito de N representa um nó da lista encadeada. Você precisa incrementa o número N em 1.
+Consider a number N with up to 1000 digits represented as a linked list such that every digit N represent a node in the list. You need to increment the number N in 1.
 </p>
 
 <br> <br>
-## Entrada
-Lista : 1->2->9->nullptr
+## Input
+List : 1->2->9->nullptr
 
-## Saída
-Lista : 1->3->0->nullptr
+## Output
+List : 1->3->0->nullptr
