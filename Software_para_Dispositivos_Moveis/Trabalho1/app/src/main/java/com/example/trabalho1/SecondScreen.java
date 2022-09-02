@@ -33,7 +33,8 @@ public class SecondScreen extends AppCompatActivity {
     public void finish(){
 
         super.finish();
-        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);    //muda a animação de saída da tela
+        //muda a animação de saída da tela
+        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
 
     }
 

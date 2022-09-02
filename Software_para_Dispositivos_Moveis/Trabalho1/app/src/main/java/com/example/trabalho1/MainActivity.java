@@ -99,7 +99,8 @@ public class MainActivity extends AppCompatActivity {
 
                 Intent secondaryScreen = new Intent(getApplicationContext(),SecondScreen.class);
                 startActivity(secondaryScreen);
-                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);    //muda a animação de transição para second_screen
+                //muda a animação de transição para second_screen
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
 
             }
         });
