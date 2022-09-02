@@ -5,8 +5,13 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.content.pm.PackageManager;
+import android.content.Context;
 import android.content.Intent;
 import android.hardware.Camera;
+import android.hardware.camera2.CameraAccessException;
+import android.hardware.camera2.CameraManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -67,21 +72,35 @@ public class MainActivity extends AppCompatActivity {
     private void build_toggle_button(){
 
         ToggleButton tgl_btn = findViewById(R.id.toggleButton);
-        Camera camera = Camera.open();
-        Camera.Parameters parameters = camera.getParameters();
+        CameraManager cameraManager = (CameraManager) getSystemService(Context.CAMERA_SERVICE);
+        String getCameraId;
+
+        if(getPackageManager().hasSystemFeature(PackageManager.FEATURE_CAMERA_FLASH))
+        {
+            //dipositivo tem flash
+            try {
+
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                    getCameraId = cameraManager.getCameraIdList()[0];
+                    cameraManager.setTorchMode(getCameraId,true  );
+                }
+            } catch (CameraAccessException e) {
+                e.printStackTrace();
+            }
+        }else
+        {
+            Toast.makeText(MainActivity.this, "Esse dispositivo não possui flash", Toast.LENGTH_SHORT).show();
+            buttonView.setChecked(false);
+        }
 
         tgl_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(tgl_btn.isChecked()) {
-                    parameters.setFlashMode(Camera.Parameters.FLASH_MODE_TORCH);
-                    camera.setParameters(parameters);
-                    camera.startPreview();
+
                 }
                 else{
-                    parameters.setFlashMode(Camera.Parameters.FLASH_MODE_OFF);
-                    camera.setParameters(parameters);
-                    camera.stopPreview();
+
                 }
             }
         });
