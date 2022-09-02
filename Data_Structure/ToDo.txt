@@ -4,10 +4,14 @@ translate:
     BinaryTree
         >Loading_Tree_Via_String (ok)
         >Nodes_Sum_N_Lower_Value (ok)
-        >Path_ToNode ()
+        >Path_ToNode (ok)
+        >Showing_Tabulated_Tree (ok)
         
 
     Linked_List
+        >Detect_Loop (ok)
+        >Lists_Intersection (ok)
+        >Merge_Lists ()
 
     Queue
 
