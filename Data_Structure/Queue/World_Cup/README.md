@@ -3,19 +3,19 @@
 </p>
 
 
-<h1 align="center">Descrição</h1>
+<h1 align="center">Description</h1>
 
 <p align="center">
-Na Copa do Mundo, depois de uma fase de grupos, dezesseis equipes disputam a Fase Final, composta de quinze jogos eliminatórios. A figura abaixo mostra a tabela de jogos da Fase Final:
+In the World Cup, after a group stage, sixteen teams compete the Final Stage, compossed of fifteen eliminatory matchs. The picture bellow shows the final matchs table:
 </p> <br>
 
 ![image](https://user-images.githubusercontent.com/61806906/180612967-cd87a70b-70e7-4be7-bd74-ec2a1b23d48d.png)
 
-<br>Dados os resultados dos quinze jogos da Fase Final, o programa determina a equipe campeã.
+<br>Given the results of the fifteen final matchs, the program determine the winner team.
 
 <br> <br>
-## Entrada
-A entrada é composta de quinze linhas, cada uma contendo o resultado de um jogo. A primeira linha contém o resultado do jogo de número 1, a segunda linha o resultado do jogo de número 2, e assim por diante. O resultado de um jogo é representado por dois números inteiros MM e NN separados por um espaço em branco, indicando respectivamente o número de gols da equipe representada à esquerda e à direita na tabela de jogos.
+## Input
+The input is composed of fifteen lines, which one containing the results of a game. The first line contains the result of the first mathc, the second line the match of number 2, and so on. The result of the match is written with two integer numbers separated by space, indicating respectively the amout of goals of the team represented on the left and on the right of the table.
 
 ex: <br>
 4 1 <br>
@@ -34,5 +34,5 @@ ex: <br>
 1 4  <br>
 1 0 <br>
 
-## Saída
-O programa imprime a letra identificadora da equipe campeã.
+## Output
+The program prints a letter indicating the winner team.

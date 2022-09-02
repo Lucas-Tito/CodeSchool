@@ -11,7 +11,7 @@ typedef struct{
     int nextGasStation;
     int position;
 
-} Bomba;
+} GasStation;
 
 
 
@@ -20,8 +20,8 @@ int main(){
     int n;
     cin >> n;
     
-    vector<Bomba> b;
-    Bomba bToAdd;
+    vector<GasStation> b;
+    GasStation bToAdd;
     int gasOnTheTruck = 0;
     int startingPoint = 0;
     
@@ -31,7 +31,7 @@ int main(){
         b.push_back(bToAdd);
     }
             
-    for(int i=0; i<n; i++){   //for para verificar se toda a viajem pode ser feita
+    for(int i=0; i<n; i++){   //for to verify if the whole trip can be done
             
         gasOnTheTruck += b[i].gasAvailable - b[i].nextGasStation;
             

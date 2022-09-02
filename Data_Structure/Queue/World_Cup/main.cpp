@@ -8,7 +8,7 @@ using namespace std;
 /*
 typedef struct{
     
-    int front=0, back=-1;   //geralmente back começa como -1
+    int front=0, back=-1;   //generely back starts with -1
     
     char queue [16] = { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H',
                         'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P' };
@@ -29,7 +29,7 @@ typedef struct{
             return false;
     }
     
-    void addElement(char x){ //adiciona no final
+    void addElement(char x){ //adds to the end
         
         if(!isFull()){
             back++;
@@ -38,14 +38,14 @@ typedef struct{
         
     }
     
-    void removeElement(){ //remove do começo
+    void removeElement(){ 
         
         if(!IsEmpty())
-            front++;    //o valor não chega a ser removido, só que passa a ser ignorado
+            front++;    //the value isn't actualy remove, just ignored
         
     }
     
-    int getQueueElement(){  //retorna o valor no início da fila
+    int getQueueElement(){  //returns the value in the begining of queue
         
         return queue[front];
         
@@ -53,7 +53,7 @@ typedef struct{
     
     void printQueue(){
         
-        cout << "--------IMPRIMINDO FILA--------"<<endl;
+        cout << "--------PRINTING QUEUE--------"<<endl;
         for(int i=front; i<back; i++)
             printf("%c ", queue[i]);
         cout << endl <<"-------------------------------" <<endl;
@@ -65,35 +65,35 @@ typedef struct{
 
 int main(){
     
-    queue<char> resultados;
+    queue<char> results;
     char values [16] = { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H',
                         'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P' };
     for(int i =0; i<16; i++)
-        resultados.push(values[i]);
+        results.push(values[i]);
     
     int result1, result2;
     char winner;
     
-    while(resultados.size()>1){
+    while(results.size()>1){
         
         cin >> result1 >> result2;
         
         if(result1>result2){
-            winner = resultados.front();
-            resultados.pop();
-            resultados.pop();
-            resultados.push(winner);
+            winner = results.front();
+            results.pop();
+            results.pop();
+            results.push(winner);
         }
         else{
-            resultados.pop();
-            winner = resultados.front();
-            resultados.pop();
-            resultados.push(winner);
+            results.pop();
+            winner = results.front();
+            results.pop();
+            results.push(winner);
         }
             
     }
     
-    printf("%c\n", resultados.front());
+    printf("%c\n", results.front());
 
     return 0;
 }
