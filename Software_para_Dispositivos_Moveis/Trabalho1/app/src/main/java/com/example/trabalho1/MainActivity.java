@@ -21,6 +21,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.Spinner;
 import android.widget.Toast;
 import android.widget.ToggleButton;
@@ -44,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
         build_spinner();
         build_autocomplete_countries();
         build_btn_nextScreen();
+        build_toggle_button();
 
 
     }
@@ -73,37 +75,43 @@ public class MainActivity extends AppCompatActivity {
 
         ToggleButton tgl_btn = findViewById(R.id.toggleButton);
         CameraManager cameraManager = (CameraManager) getSystemService(Context.CAMERA_SERVICE);
-        String getCameraId;
 
-        if(getPackageManager().hasSystemFeature(PackageManager.FEATURE_CAMERA_FLASH))
-        {
-            //dipositivo tem flash
-            try {
+    tgl_btn.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        @Override
+        public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
+            String getCameraId;
 
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                    getCameraId = cameraManager.getCameraIdList()[0];
-                    cameraManager.setTorchMode(getCameraId,true  );
+            if(!isChecked){
+                try {
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                        String cameraId = cameraManager.getCameraIdList()[0];
+                        cameraManager.setTorchMode(cameraId,false);
+                    }
+                } catch (CameraAccessException e) {
+                    e.printStackTrace();
                 }
-            } catch (CameraAccessException e) {
-                e.printStackTrace();
             }
-        }else
-        {
-            Toast.makeText(MainActivity.this, "Esse dispositivo não possui flash", Toast.LENGTH_SHORT).show();
-            buttonView.setChecked(false);
+            else{
+                if(getPackageManager().hasSystemFeature(PackageManager.FEATURE_CAMERA_FLASH))
+                {
+                    //dipositivo tem flash
+                    try {
+
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                            getCameraId = cameraManager.getCameraIdList()[0];
+                            cameraManager.setTorchMode(getCameraId,true  );
+                        }
+                    } catch (CameraAccessException e) {
+                        e.printStackTrace();
+                    }
+                }else
+                {
+                    Toast.makeText(MainActivity.this, "Esse dispositivo não possui flash", Toast.LENGTH_SHORT).show();
+                    compoundButton.setChecked(false);
+                }
+            }
         }
-
-        tgl_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(tgl_btn.isChecked()) {
-
-                }
-                else{
-
-                }
-            }
-        });
+    });
     }
 
     private void build_spinner(){
