@@ -3,20 +3,20 @@
 </p>
 
 
-<h1 align="center">Descrição</h1>
+<h1 align="center">Description</h1>
 
 <p align="center">
-Bubble Sort é o algoritmo de ordenação mais simples que funciona trocando repetidamente os elementos adjacentes se eles estiverem na ordem errada. Esse algoritmo não é adequado para grandes conjuntos de dados, pois sua complexidade de tempo média e de pior caso é bastante alta.
+Bubble Sort is the simper sort algorithm that works swapping repeatedly the adjacent elements if they are in the wrong order. This algorithm isn't suitable to big data groups, because it's complexity of time is the average and can be pretty slow in the worst case scenario.
 </p>
 
 <br> <br>
-## Entrada
-A primeira linha contém o inteiro N (1 <= N <= 5000)denotando o número de elementos do vetor A. <br>
-A segunda linha contém inteiros positivos denotando os elementos do vetor A.
+## Input
+The first line has a integer N (1 <= N <= 5000) representing the amount of elements of vector A. <br>
+The second one has the positive integer elements of vector A.
 
 ex: <br>
 5 <br>
 1 3 2 5 4 <br>
 
-## Saída
-O programa imprime um número que denota o número de iterações que o algorítimo precisou para ordenar os elementos.
+## Output
+THe program prints the number of interation to program needed to sort the elements.

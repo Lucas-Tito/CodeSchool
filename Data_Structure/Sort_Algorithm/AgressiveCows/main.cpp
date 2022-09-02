@@ -27,36 +27,36 @@ bool canPlaceCow(int *vec, int nVec, int cows, int distance){
 
 int placeCows(int *vec, int n, int cows){
     
-    int inicio=1, meio, fim= vec[n-1]-vec[0]; //o fim e o início dizem respeito à mínima distância possível e não ao vetor de baias
+    int low=1, middle, high= vec[n-1]-vec[0]; //high and low are about the minimum distance possible
     
-    while(inicio <= fim){
+    while(low <= high){
         
-        meio = (inicio + fim)/2;    //calcula o meio do vetor
+        middle = (low + high)/2;    //compute the middle of the vector
         
-        if(canPlaceCow(vec, n, cows, meio))
-            inicio = meio+1;
+        if(canPlaceCow(vec, n, cows, middle))
+            low = middle+1;
         else
-            fim = meio-1;
+            high = middle-1;
 
     }
     
-    return meio;
+    return middle;
 }
 
 
 
 int main(){
     
-    int nBaias, nVacas;
-    cin >> nBaias;
-    cin >> nVacas;
+    int nBays, nCows;
+    cin >> nBays;
+    cin >> nCows;
     
-    int baiaPos[nBaias];
-    for(int i=0; i<nBaias; i++)
-        cin >> baiaPos[i];
+    int bayPos[nBays];
+    for(int i=0; i<nBays; i++)
+        cin >> bayPos[i];
         
-    sort(baiaPos, baiaPos+nBaias);    
-    cout <<placeCows(baiaPos, nBaias, nVacas) <<endl;
+    sort(bayPos, bayPos+nBays);    
+    cout <<placeCows(bayPos, nBays, nCows) <<endl;
     
     
     return 0;

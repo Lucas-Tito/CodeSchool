@@ -1,27 +1,27 @@
 #include<iostream>
 using namespace std;
 
-int busca_binariaCount(int *vetor, int n, int item){
+int binarySearch_count(int *vector, int n, int item){
     
-    int inicio=0, fim=n-1, count=0, meio;
+    int low=0, high=n-1, count=0, middle;
     
-    while(inicio <= fim){
+    while(low <= high){
         
         count++;
-        meio = (inicio + fim)/2;    //calcula o meio do vetor
+        middle = (low + high)/2;    //compute middle of vector
         
-        if(vetor[meio] == item)     //se o item estiver no meio, encerra o while
+        if(vector[middle] == item)     //if tne item is on middle, while stops
             break;         
         /*
-         *Já que o vetor está ordenado, se o elemento no meio for maior que o item
-         *O fim passa a ser o meio -1 (é como se todos depois do meio fossem descartados)
-         *Já que de tabela todos são maiores que o item
+         *Given that the vector is sorted, if the element on middle is greater than item
+         *High becomes middle -1 (is as if all elements after middle were deleted)
+         *Because elements after middle are greater than item too
         */ 
         else
-            if(vetor[meio] > item)  
-                fim = meio - 1;     
+            if(vector[middle] > item)  
+                high = middle - 1;     
         else                         
-            inicio = meio + 1;  //se o elemento no meio for menor, o processo é o mesmo, só que dessa vez todos os menores são descartados
+            low = middle + 1;  //if element on middle is smaller, the process is the same, but this time the smaller elements are discarted
     }
  
     return count;   
@@ -46,9 +46,9 @@ int main(){
       
     for(int i=0; i<nQuestions; i++){
         if(i == nQuestions-1)
-            cout << busca_binariaCount(sortedVec, nVec, questionsVec[i]) << endl;
+            cout <<binarySearch_count(sortedVec, nVec, questionsVec[i]) << endl;
         else
-            cout << busca_binariaCount(sortedVec, nVec, questionsVec[i]) << " ";
+            cout <<binarySearch_count(sortedVec, nVec, questionsVec[i]) << " ";
     }
     
     

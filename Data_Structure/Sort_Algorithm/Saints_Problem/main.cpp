@@ -4,14 +4,14 @@ using namespace std;
 
 int main(){
     
-    int nIgrejas, doacao;
-    cin >> nIgrejas;
-    cin >> doacao;
+    int nChurchs, donation;
+    cin >> nChurchs;
+    cin >> donation;
     
     
-    float saldoInicial = ((pow(2, nIgrejas)-1) * doacao)/pow(2, nIgrejas);
+    float initialBalance = ((pow(2, nChurchs)-1) * donation)/pow(2, nChurchs);
     
-    printf("%.2f", saldoInicial);
+    printf("%.2f", initialBalance);
     
     return 0;
 }

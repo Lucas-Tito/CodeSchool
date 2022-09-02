@@ -27,17 +27,15 @@ int main(){
     
     int n;
     
-    //cout << "Forneça N:" << endl;
+    //cout << "Enter N:" << endl;
     cin >> n;
     int vet[n];
     
-    //cout << "Forneça os elementos do vetor:" << endl;
-    
-    //recebe os elementos do vetor
+    //cout << "Enter vector elements:" << endl;
     for(int i = 0; i<n; i++)
         cin >> vet[i]; 
     
-    //executa o algorítimo bubblesort e imprime o número de iterações
+    
     cout << bubblesort(vet, n) << endl;
     
     return 0;    

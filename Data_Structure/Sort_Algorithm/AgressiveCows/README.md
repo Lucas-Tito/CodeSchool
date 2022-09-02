@@ -3,21 +3,21 @@
 </p>
 
 
- <h1 align="center">Descrição</h1>
+ <h1 align="center">Description</h1>
 
 <h3 align="center">
-A ideia deste código é posicionar as vacas em cada baia de maneira a manter a maior distância mínima de vaca para vaca.
+The idea for this code is to put cows on each bay in a way that you can keep the maximum minimum distance between each cow.
 </h3>
-<h6 align="center">aqui está o link de uma explicação para este algorítmo confuso: <a href="https://www.youtube.com/watch?v=wSOfYesTBRk&ab_channel=takeUforward">explicação</a>.</h6>
+<h6 align="center">here is a link to a explanation of this confuse algorithm: <a href="https://www.youtube.com/watch?v=wSOfYesTBRk&ab_channel=takeUforward">explanation</a>.</h6>
 
 <br> <br> <br>
-## Entrada
-É esperado que na primeira linha seja fornecido o número de baias e de vacas em uma única linha. <br>
-Na segunda, espera-se elementos separados por espaço em uma única linha representado a localização das baias.
+## Input
+Is expected that in the first line the number of bays and cows are provided. <br>
+On the second one, is expected the elements separate by space representing the bays cordinates.
 
 ex: <br>
 5 3<br>
 1 3 2 5 4 <br>
 
-## Saída
-O programa imprime a maior distância mínima
+## Output
+The program prints the greater minimum distance.

@@ -1,18 +1,18 @@
 <h1>Descrição</h1>
 
 
-Um algoritmo é dito online quando ele recebe um fluxo de dados como entrada e precisa tomar decisões durante o processo sem a necessidade de saber as solicitações futuras. A aluna Larissa não entendeu muito bem esse conceito então o professor Insertionildo propôs o seguinte desafio para Larissa.
+A algorithm is online when it receives a data flow and needs to answer to events during the process without need to know future requests.
 
-O programa precisa processar dois tipos operações:
-+ A operação do tipo 1 recebe um novo elemento do vetor.
-+ A operação do tipo 2 quer saber qual é o i-ésimo elemento no vetor ordenado formado com elementos já recebidos.<br><br>
+The program need to process two types of operations:
++ The operation of type 1 receives a new element.
++ The operation of type 2 requests the ith element in the vector populated so far.<br><br>
 
-Note que o algoritmo precisa atender as operações durante o processo.
+Note that the algorithm needs to answer the operations during the process.
 
 
 <br> <br>
-## Entrada
-A primeira linha da entrada contém um inteiro representando o número de requisições que o seu programa deve responder. As seguintes N linhas contém um inteiro O indicando a operação a ser realizada. Se Operação = 1, então a linha contém mais um inteiro A representando o número adicionado no vetor. Se Operação = 2, então a linha contém mais um inteiro II indicando qual é a posição desejada no vetor ordenado.
+## Input
+The first line contains a integer representing the amount of requisitions that your program needs to attend to. The next N lines contain a integer indicating the operation to be done. If Operation = 1, than the line will contain one more integer representing a item to be added to the vector. If Operation = 2, than the line will contain one more integer indicating the desired position in the sorted vector.
 
 ex: <br>
 10<br>
@@ -27,5 +27,5 @@ ex: <br>
 1 4<br>
 2 3<br>
 
-## Saída
-O programa imprime o resultado das operações do tipo 2.
+## Output
+The program pints the results of operation of type 2.

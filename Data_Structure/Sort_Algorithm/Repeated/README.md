@@ -1,18 +1,18 @@
-<h1 align="center">Descrição</h1>
+<h1 align="center">Description</h1>
 
 <p align="center">
-Esre programa descobre a quantidade de elementos repetidos de um vetor.
+This program finds the amount of repeated elements in a array.
 </p>
 
 <br> <br>
-## Entrada
-A primeira linha recebe o inteiro N denotando o número de elementos do vetor A.<br>
+## Input
+The first line receives a integer N representing the amount of array elements.<br>
 
-A segunda linha contém inteiros positivos denotando os elementos do vetor A.
+The second one receives the array elements (in a single line).
 
 ex: <br>
 5 <br>
 1 3 2 5 4 <br>
 
-## Saída
-O programa imprime um número inteiro que denota o número de elementos repetidos no vetor.
+## Output
+The program prints the amount of repeated elements (without counting the repetition more than once).
