@@ -1,18 +1,18 @@
 <h1 align="center">Descrição</h1>
 
 <p align="center">
-Dado um vetor A de n inteiros. Compute o valor prox_maior(X) definido da seguinte maneira:
+Given a vector A of N integers. Compute the value of next_greater(X) defined as follows:
 
-prox_maior(i) : j é o menor índice j tal que i < j < n e A[j] > A[i].
+next_greater(i) : j is the smaller index j such that i < j < n and A[j] > A[i].
 
-Você precisa calcular o prox_maior para cada índice i do vetor A para 0 <= i < n. Se tal número não existe, atribua o valor -1.
+You need to comput the next_greater for each index o from the vectorA for 0 <= i < n. If the number does not exist, assign the value -1.
 
-Por exemplo, considere o vetor A = [3,7,1,7,8,4,5,2], temos os seguintes valores:
+For example, consider the vector A = [3,7,1,7,8,4,5,2], we have the following values:
 </p>
 
 <br> <br>
-## Entrada
-A primeira linha da entrada contém um inteiro N denotando o tamanho do vetor A. Cada uma das N linhas seguintes contém um inteiro onde o inteiro na i-ésima linha denota A[i].
+## Input
+The first line has a integer N representing the size of vector A. Each following N lines have a integer where the integer on the ith line denotes A[i].
 
 ex: <br>
 8 <br>
@@ -25,5 +25,5 @@ ex: <br>
 5 <br>
 2 <br>
 
-## Saída
-O programa imprime N números separados por espaço em uma única linha, onde o i-ésimo inteiro denota o prox_maior(i).
+## Output
+The program prints the N numbers separate by space (in a single line), where the ith integer denotes the next_greater(i).
