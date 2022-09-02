@@ -15,7 +15,7 @@ In the World Cup, after a group stage, sixteen teams compete the Final Stage, co
 
 <br> <br>
 ## Input
-The input is composed of fifteen lines, which one containing the results of a game. The first line contains the result of the first mathc, the second line the match of number 2, and so on. The result of the match is written with two integer numbers separated by space, indicating respectively the amout of goals of the team represented on the left and on the right of the table.
+The input is composed of fifteen lines, which one containing the results of a game. The first line contains the result of the first match, the second line the match of number 2, and so on. The result of the match is written with two integer numbers separated by space, indicating respectively the amout of goals of the team represented on the left and on the right of the table.
 
 ex: <br>
 4 1 <br>
