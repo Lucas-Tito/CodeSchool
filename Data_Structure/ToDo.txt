@@ -12,7 +12,7 @@ translate:
 
     Queue (ok)
 
-    Sort_Algorithm
+    Sort_Algorithm (ok)
 
     Stack
     
