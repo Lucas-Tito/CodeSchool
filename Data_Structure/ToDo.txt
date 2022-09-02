@@ -10,7 +10,7 @@ translate:
 
     Linked_List (ok)
 
-    Queue
+    Queue (ok)
 
     Sort_Algorithm
 
