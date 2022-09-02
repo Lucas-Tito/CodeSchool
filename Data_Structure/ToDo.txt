@@ -8,10 +8,7 @@ translate:
         >Showing_Tabulated_Tree (ok)
         
 
-    Linked_List
-        >Detect_Loop (ok)
-        >Lists_Intersection (ok)
-        >Merge_Lists ()
+    Linked_List (ok)
 
     Queue
 
