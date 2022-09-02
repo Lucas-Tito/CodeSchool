@@ -50,11 +50,11 @@ ListNode* populateList(){
 bool detectLoop(ListNode* head){
     ListNode *slow = head, *fast = head;
   
-    //enquanto esses caras forem diferente de NULL
+    //while these guys are different than NULL
     while (slow && fast && fast->next) {
-        //slow anda 1
+        //slow moves 1
         slow = slow->next;
-        //fast anda 2
+        //fast moves 2
         fast = fast->next->next;
         
         if (slow == fast) {

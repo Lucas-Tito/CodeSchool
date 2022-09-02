@@ -19,6 +19,7 @@ class ListNode {
  
 
 ListNode* populateList(){
+
     int n;
     cin >> n;
     ListNode * head;
@@ -42,25 +43,25 @@ ListNode* populateList(){
 
 ListNode * insert_back(ListNode ** head, int val){
     
-    // é criado o nó que será inserido no final
+    //it's created a node which will be inseted in the end
     ListNode * new_node = new ListNode(); 
     new_node->val = val;  
     new_node->next = NULL;  
     
-    // last é usado para percorrer a list 
+    //last it's used to go through the list 
     ListNode *last = *head; 
     
-    //se a lista for vazia, o novo nó é posto em head
+    //if the list is empty, the new node is putted in head
     if (*head == NULL){  
         *head = new_node;  
         return *head;  
     }  
     
-    //procura pelo último elemento da lista
+    //searchs for the last ellement of the list
     while (last->next != NULL)
         last = last->next;  
     
-    //insere o novo nó depois do último nó da lista 
+    //insert a new node after the last node of the list 
     last->next = new_node;  
     
     return *head;  
@@ -71,31 +72,31 @@ ListNode * intersectionList(ListNode * head1, ListNode * head2){
 
     ListNode * intersectionList = nullptr;
     
-    //compara cada elemento do vetor 1 com cada elemento do vetor 2
+    //compare which element from vector1 with which element of vector2
     for(ListNode* ptr1 = head1; ptr1!=nullptr; ptr1 = ptr1->next)
         for(ListNode* ptr2 = head2; ptr2!=nullptr; ptr2 = ptr2->next)
-            if(ptr1->val == ptr2->val){     //se um elemento que faz parte da interseção for encontrado
+            if(ptr1->val == ptr2->val){     //if a element which is part of the intersection is found
                 
-                //se a lista dos elementos da interseção for nula
+                //if the list of intersection is null
                 if(intersectionList != nullptr){
                     
                     bool elementAlreadyInInstersection = false;
                     
-                    //verifica se o elemento a ser inserido já está na lista de interseções
+                    //verifys if the element to be inserted is already on intersection list
                     for(ListNode* ptr3 = intersectionList; ptr3!=nullptr; ptr3 = ptr3->next)
                         if(ptr3->val == ptr2->val){
                             elementAlreadyInInstersection = true;
                             break;
                         }
                     
-                    //se o elemento já não estiver na lista de interseção, este é adicionado
+                    //if the element isn't on the intersection list, the element is added
                     if(!elementAlreadyInInstersection){
                         insert_back(&intersectionList, ptr2->val);
                         break;
                     }
                         
                 }
-                //se a lista de interseção estiver vazia, é só adicionar
+                //if the intersection list is null, you just need to add
                 else{
                     insert_back(&intersectionList, ptr2->val);
                     break;

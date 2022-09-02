@@ -1,13 +1,13 @@
-<h1 align="center">Descrição</h1>
+<h1 align="center">Description</h1>
 
-Dada uma lista encadeada de N nós. A tarefa é encontrar o meio da lista encadeada. Por exemplo, se a lista encadeada for
-1-> 2-> 3-> 4-> 5, então o nó do meio da lista é 3
-Se houver dois nós do meio (no caso, quando N for par), imprima o segundo elemento do meio.
-Por exemplo, se a lista encadeada dada for 1-> 2-> 3-> 4-> 5-> 6, então o nó do meio da lista é 4.
+Given a linked list of N nodes. The assignment it's find the middle of the linked list. For example, if the linked list is
+1-> 2-> 3-> 4-> 5, so the middle of the node is 3
+If there are two nodes in the middle(in this case, when N is even), print the second element of the middle.
+If the given linked list is 1-> 2-> 3-> 4-> 5-> 6, therefore the middle node of the list is 4.
 
 <br> <br>
-## Entrada
+## Input
 1->2->3->4->5
 
-## Saída
+## Output
 3

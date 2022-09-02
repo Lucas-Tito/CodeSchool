@@ -3,17 +3,17 @@
 </p>
 
 
-<h1 align="center">Descrição</h1>
+<h1 align="center">Description</h1>
 
 <p align="center">
-Dada uma lista encadeada de N nós. o programa checa se essa lista encadeada tem um loop.
+Given a linked list of N nodes. The program checks if this linked list has a loop.
 </p>
 
 <br> <br>
-## Entrada
+## Input
 N = 3 <br>
 X = 2 <br>
-valores = [1,2,3] <br>
+values = [1,2,3] <br>
 
-## Saída
+## Output
 :/

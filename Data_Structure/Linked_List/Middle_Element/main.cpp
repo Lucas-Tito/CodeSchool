@@ -39,12 +39,12 @@ ListNode* populateList(){
 }
 
 
-int iesimoTermo(ListNode * head, int k){
+int ithTerm(ListNode * head, int k){
     
     if(k == 0){
         return head->val;
     }else{
-        return iesimoTermo(head->next, k-1);
+        return ithTerm(head->next, k-1);
     }
 
 }
@@ -67,7 +67,7 @@ int sizeList(ListNode * head){
 int getMiddle(ListNode *head){
     
     int n = sizeList(head);
-    return iesimoTermo(head, n/2);
+    return ithTerm(head, n/2);
     
 }    
 
@@ -81,4 +81,5 @@ int main(){
 
     
     return 0;    
+    
 }

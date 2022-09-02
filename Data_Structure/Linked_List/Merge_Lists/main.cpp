@@ -19,25 +19,25 @@ class ListNode {
 
 ListNode * insert_back(ListNode ** head, int val){
     
-    // é criado o nó que será inserido no final
+    //is created the node that will be inserted in the end
     ListNode * new_node = new ListNode(); 
     new_node->val = val;  
     new_node->next = NULL;  
     
-    // last é usado para percorrer a list 
+    //last it's used to go throgh the list 
     ListNode *last = *head; 
     
-    //se a lista for vazia, o novo nó é posto em head
+    //if the list is empty, the new node is putted onto head
     if (*head == NULL){  
         *head = new_node;  
         return *head;  
     }  
     
-    //procura pelo último elemento da lista
+    //searchs the last element of the list
     while (last->next != NULL)
         last = last->next;  
     
-    //insere o novo nó depois do último nó da lista 
+    //insert the new node after the last node of the list 
     last->next = new_node;  
     
     return *head;  
@@ -46,13 +46,13 @@ ListNode * insert_back(ListNode ** head, int val){
 
 ListNode* mergeTwoLists(ListNode* l1, ListNode* l2) {
     
-    //tratamento caso alguma das listas sejam nulas    
+    //handling in case of some of the lists are null    
     if (!l1)
         return l2;
     if (!l2)
         return l1;
   
-    //começa com a lista que tem a head com o menor valor
+    //begins with the list that contains the head with the lower value
     if (l1->val < l2->val){
         l1->next = mergeTwoLists(l1->next, l2);
         return l1;
