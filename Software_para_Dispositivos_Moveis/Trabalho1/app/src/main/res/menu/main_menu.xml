@@ -6,7 +6,7 @@
         android:id="@+id/search_btn"
         android:title="Search"
         app:showAsAction="ifRoom"
-        android:icon="@drawable/search_icon"/>
+        android:icon="@drawable/ic_search"/>
 
     <item
         android:id="@+id/settings_btn"
