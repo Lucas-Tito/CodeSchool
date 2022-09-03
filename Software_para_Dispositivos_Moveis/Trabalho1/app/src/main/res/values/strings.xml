@@ -9,11 +9,38 @@
     <string name="radio_btnLable">I\'m an radio button</string>
 
 
+    /*BTN_TEXT*/
     <string name="autoCompleteHint">Select an country</string>
     <string name="btn_nextScreen">next screen</string>
     <string name="radio_btn">click-me</string>
+    <string name="play_btn"> Play an oldie</string>
+
 
     <string name="settings_btn">Settings</string>
 
-    <string name="play_btn"> Play an oldie</string>
+
+    /*RECYCLER_VIEW*/
+    <string-array name="programing_langs">
+        <item>C++</item>
+        <item>Java</item>
+        <item>JavaScript</item>
+        <item>Python</item>
+        <item>React</item>
+        <item>Typescript</item>
+        <item>Ruby</item>
+        <item>VisualBasics</item>
+        <item>C#</item>
+    </string-array>
+    <string-array name="langs_description">
+        <item>This is a random description</item>
+        <item>This is a random description</item>
+        <item>This is a random description</item>
+        <item>This is a random description</item>
+        <item>This is a random description</item>
+        <item>This is a random description</item>
+        <item>This is a random description</item>
+        <item>This is a random description</item>
+        <item>This is a random description</item>
+    </string-array>
+
 </resources>
