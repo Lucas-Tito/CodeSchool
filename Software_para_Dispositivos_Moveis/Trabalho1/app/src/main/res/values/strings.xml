@@ -1,25 +1,50 @@
 <resources>
     <string name="app_name">Trabalho1</string>7
 
-    /*LABLES*/
-    <string name="ToggleButtonLable">I\'m toggle button</string>
-    <string name="EditTextLable">I\'m Edit Text</string>
-    <string name="dropdownLable">I\'m a dropdown to display an array</string>
-    <string name="autocompleteLable">I\'m an autocompleteTextView</string>
-    <string name="radio_btnLable">I\'m an radio button</string>
 
+    <!-- ____________activity_main strings______________ -->
 
-    /*BTN_TEXT*/
-    <string name="autoCompleteHint">Select an country</string>
-    <string name="btn_nextScreen">next screen</string>
-    <string name="radio_btn">click-me</string>
-    <string name="play_btn"> Play an oldie</string>
+    <string name="tab1">MISC1</string>
+    <string name="tab2">MISC2</string>
+    <string name="tab3">RELATIVELAYOUT</string>
 
+    <string name="toolbarTitle">Trabalho1</string>
 
     <string name="settings_btn">Settings</string>
 
+    <!-- ________________________________________________ -->
 
-    /*RECYCLER_VIEW*/
+
+
+
+    <!-- ____________fragment_misc_elements1 strings______________ -->
+
+    <string name="ToggleButtonLable">I\'m toggle button</string>
+    <string name="EditTextLable">I\'m Edit Text</string>
+    <string name="autocompleteLable">I\'m an autocompleteTextView</string>
+    <string name="dropdownLable">I\'m a dropdown to display an array</string>
+
+    <string name="autoCompleteHint">Select an country</string>
+
+    <!-- __________________________________________________________ -->
+
+
+
+    <!-- ____________fragment_misc_elements2 strings______________ -->
+
+    <string name="radio_btnLable">I\'m an radio button</string>
+
+    <string name="radio_btn">click-me</string>
+
+    <string name="play_btn"> Play an oldie</string>
+
+    <!-- __________________________________________________________ -->
+
+
+
+
+    <!-- ______________RECYCLER_VIEW_______________ -->
+
     <string-array name="programing_langs">
         <item>C++</item>
         <item>Java</item>
@@ -31,6 +56,7 @@
         <item>VisualBasics</item>
         <item>C#</item>
     </string-array>
+
     <string-array name="langs_description">
         <item>This is a random description</item>
         <item>This is a random description</item>
@@ -42,7 +68,8 @@
         <item>This is a random description</item>
         <item>This is a random description</item>
     </string-array>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- _____________________________________________ -->
+
 
 </resources>

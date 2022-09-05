@@ -1,6 +1,11 @@
 package com.example.trabalho1;
 
+import android.content.Context;
+import android.content.pm.PackageManager;
+import android.hardware.camera2.CameraAccessException;
+import android.hardware.camera2.CameraManager;
 import android.media.MediaPlayer;
+import android.os.Build;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -9,9 +14,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CompoundButton;
+import android.widget.Toast;
+import android.widget.ToggleButton;
 
 
 public class Fragment_Misc_Elements2 extends Fragment {
+    //initialize song
     MediaPlayer oldie_song;
 
     // TODO: Rename parameter arguments, choose names that match
@@ -48,6 +57,7 @@ public class Fragment_Misc_Elements2 extends Fragment {
     @Override
     public void onPause() {
         super.onPause();
+        //pause song when fragment is away
         oldie_song.pause();
     }
 
@@ -64,8 +74,11 @@ public class Fragment_Misc_Elements2 extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v = inflater.inflate(R.layout.fragment_misc__elements2, container, false);
+        View v = inflater.inflate(R.layout.fragment_misc_elements2, container, false);
+
         build_play_btn(v);
+        build_toggle_button(v);
+
         return v;
     }
 
@@ -75,16 +88,59 @@ public class Fragment_Misc_Elements2 extends Fragment {
         Button playBtn = v.findViewById(R.id.play_btn);
         oldie_song = MediaPlayer.create(getActivity(), R.raw.oldie_song);
 
-
         playBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 oldie_song.start();
-
             }
         });
 
-
     }
+
+
+
+    private void build_toggle_button(View v){
+
+        ToggleButton tgl_btn = v.findViewById(R.id.toggleButton);
+        CameraManager cameraManager = (CameraManager) getActivity().getSystemService(Context.CAMERA_SERVICE);
+
+        tgl_btn.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
+                String getCameraId;
+
+                if(!isChecked){
+                    try {
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                            String cameraId = cameraManager.getCameraIdList()[0];
+                            cameraManager.setTorchMode(cameraId,false);
+                        }
+                    } catch (CameraAccessException e) {
+                        e.printStackTrace();
+                    }
+                }
+                else{
+                    if(getActivity().getPackageManager().hasSystemFeature(PackageManager.FEATURE_CAMERA_FLASH))
+                    {
+                        //device has torch
+                        try {
+
+                            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                                getCameraId = cameraManager.getCameraIdList()[0];
+                                cameraManager.setTorchMode(getCameraId,true  );
+                            }
+                        } catch (CameraAccessException e) {
+                            e.printStackTrace();
+                        }
+                    }else
+                    {
+                        Toast.makeText(getContext(), "this device has no torch", Toast.LENGTH_SHORT).show();
+                        compoundButton.setChecked(false);
+                    }
+                }
+            }
+        });
+    }
+
+
 }

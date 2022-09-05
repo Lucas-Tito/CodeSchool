@@ -2,13 +2,14 @@
     <!-- Base application theme. -->
     <style name="Theme.Trabalho1" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/orange</item>          //NOTE QUE NÃO HÁ PRIMÁRIA VARIANTE
-        <item name="colorPrimaryVariant">@color/orange</item>
+        <item name="colorPrimary">@color/red</item>          //NOTE QUE NÃO HÁ PRIMÁRIA VARIANTE
+        <item name="colorPrimaryVariant">@color/red</item>
         <item name="colorOnPrimary">@color/black</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/dark_grey</item>     //NOTE QUE NÃO HÁ SECUNDÁRIA VARIANTE
-        <item name="colorSecondaryVariant">@color/dark_grey</item>
+        <item name="colorSecondary">@color/light_grey</item>     //NOTE QUE NÃO HÁ SECUNDÁRIA VARIANTE
+        <item name="colorSecondaryVariant">@color/light_grey</item>
         <item name="colorOnSecondary">@color/black</item>
+
         <!-- Status bar color. -->
         //não funciona por conta da api android que está em uso
         <item name="android:statusBarColor" tools:targetApi="l">@color/orange</item>

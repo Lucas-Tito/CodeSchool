@@ -44,9 +44,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //--------------toolbar----------------------+
         Toolbar toolbar = findViewById(R.id.toolbar);
         toolbar.setTitle("");
         setSupportActionBar(toolbar);
+        //-------------------------------------------+
 
         build_tab_layout();
 
@@ -100,6 +102,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //this method is used to tab update the fragment selected when swapping betwen the fragments
         viewPager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
             @Override
             public void onPageSelected(int position) {

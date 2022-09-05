@@ -19,11 +19,7 @@ import android.widget.Spinner;
 import android.widget.Toast;
 import android.widget.ToggleButton;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link Fragment_Misc_Elements1#newInstance} factory method to
- * create an instance of this fragment.
- */
+
 public class Fragment_Misc_Elements1 extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
@@ -70,69 +66,14 @@ public class Fragment_Misc_Elements1 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v =  inflater.inflate(R.layout.fragment_misc__elements1, container, false);
+        View v =  inflater.inflate(R.layout.fragment_misc_elements1, container, false);
 
-
-
-        build_toggle_button(v);
         build_autocomplete_countries(v);
         build_spinner(v);
-
 
         return v;
 
     }
-
-
-
-
-    private void build_toggle_button(View v){
-
-        ToggleButton tgl_btn = v.findViewById(R.id.toggleButton);
-        CameraManager cameraManager = (CameraManager) getActivity().getSystemService(Context.CAMERA_SERVICE);
-
-        tgl_btn.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
-                String getCameraId;
-
-                if(!isChecked){
-                    try {
-                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                            String cameraId = cameraManager.getCameraIdList()[0];
-                            cameraManager.setTorchMode(cameraId,false);
-                        }
-                    } catch (CameraAccessException e) {
-                        e.printStackTrace();
-                    }
-                }
-                else{
-                    if(getActivity().getPackageManager().hasSystemFeature(PackageManager.FEATURE_CAMERA_FLASH))
-                    {
-                        //dipositivo tem flash
-                        try {
-
-                            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                                getCameraId = cameraManager.getCameraIdList()[0];
-                                cameraManager.setTorchMode(getCameraId,true  );
-                            }
-                        } catch (CameraAccessException e) {
-                            e.printStackTrace();
-                        }
-                    }else
-                    {
-                        Toast.makeText(getContext(), "Esse dispositivo não possui flash", Toast.LENGTH_SHORT).show();
-                        compoundButton.setChecked(false);
-                    }
-                }
-            }
-        });
-    }
-
-
-
-
-
 
 
 
@@ -142,7 +83,7 @@ public class Fragment_Misc_Elements1 extends Fragment {
 
         AutoCompleteTextView autocomplete = v.findViewById(R.id.autoCompleteTextView);
 
-        //converte o array em elementos do autocomplete
+        //converts array in autocomplete elements
         ArrayAdapter Caa = new ArrayAdapter(getActivity(), android.R.layout.simple_list_item_1, countries);
         autocomplete.setAdapter(Caa);
         //-----------------------------------------
@@ -153,10 +94,10 @@ public class Fragment_Misc_Elements1 extends Fragment {
 
     private void build_spinner(View v){
 
-        String[] dropdown_menu = {"somos", "elementos", "do array"};
+        String[] dropdown_menu = {"we are", "elements", "from array"};
         Spinner spinner = v.findViewById(R.id.dropdown_menu);
 
-        //converte o array em elementos do dropdown
+        //converts array in dropdown elements
         ArrayAdapter aa = new ArrayAdapter(getActivity(), android.R.layout.simple_spinner_item, dropdown_menu);
         aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(aa);

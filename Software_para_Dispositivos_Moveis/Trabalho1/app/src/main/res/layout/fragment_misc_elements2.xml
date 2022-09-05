@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Fragment_Misc_Elements2">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <RadioButton
+            android:id="@+id/radioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_marginBottom="26dp"
+            android:text="@string/radio_btn"
+            app:layout_constraintBottom_toTopOf="@+id/upperGuide_misc2"
+            app:layout_constraintEnd_toStartOf="@+id/rightMargin_misc2"
+            app:layout_constraintStart_toStartOf="@+id/leftMargin_misc2" />
+
+        <TextView
+            android:id="@+id/radion_btn_lable"
+            android:layout_width="116dp"
+            android:layout_height="27dp"
+            android:layout_marginBottom="20dp"
+            android:text="@string/radio_btnLable"
+            app:layout_constraintBottom_toTopOf="@+id/radioButton"
+            app:layout_constraintEnd_toEndOf="@+id/radioButton"
+            app:layout_constraintStart_toStartOf="@+id/radioButton" />
+
+        <Button
+            android:id="@+id/play_btn"
+            android:layout_width="120dp"
+            android:layout_height="70dp"
+            android:text="@string/play_btn"
+            app:layout_constraintBottom_toTopOf="@+id/lowerGuide_misc2"
+            app:layout_constraintEnd_toStartOf="@+id/rightMargin_misc2"
+            app:layout_constraintHorizontal_bias="0.492"
+            app:layout_constraintStart_toStartOf="@+id/leftMargin_misc2"
+            app:layout_constraintTop_toTopOf="@+id/upperGuide_misc2" />
+
+        <TextView
+            android:id="@+id/ToggleButtonLable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="@string/ToggleButtonLable"
+            app:layout_constraintBottom_toTopOf="@+id/toggleButton"
+            app:layout_constraintEnd_toEndOf="@+id/toggleButton"
+            app:layout_constraintStart_toStartOf="@+id/toggleButton" />
+
+
+        <!--__________________GUIDELINES____________________________-->
+        <ToggleButton
+            android:id="@+id/toggleButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="76dp"
+            android:text="ToggleButton"
+            android:textOff="Flash Off"
+            android:textOn="Flash On"
+            app:layout_constraintEnd_toStartOf="@+id/rightMargin_misc2"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="@+id/leftMargin_misc2"
+            app:layout_constraintTop_toTopOf="@+id/lowerGuide_misc2" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/leftMargin_misc2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="20dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/rightMargin_misc2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="20dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/middleGuide_misc2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/upperGuide_misc2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.4" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/lowerGuide_misc2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.6" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</FrameLayout>
