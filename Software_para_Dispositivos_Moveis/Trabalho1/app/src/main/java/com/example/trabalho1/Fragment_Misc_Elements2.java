@@ -1,5 +1,6 @@
 package com.example.trabalho1;
 
+import android.media.MediaPlayer;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,13 +8,11 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link Fragment_Misc_Elements2#newInstance} factory method to
- * create an instance of this fragment.
- */
+
 public class Fragment_Misc_Elements2 extends Fragment {
+    MediaPlayer oldie_song;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -47,6 +46,13 @@ public class Fragment_Misc_Elements2 extends Fragment {
     }
 
     @Override
+    public void onPause() {
+        super.onPause();
+        oldie_song.pause();
+    }
+
+
+    @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
@@ -56,9 +62,29 @@ public class Fragment_Misc_Elements2 extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_misc__elements2, container, false);
+        View v = inflater.inflate(R.layout.fragment_misc__elements2, container, false);
+        build_play_btn(v);
+        return v;
+    }
+
+
+    private void build_play_btn(View v) {
+
+        Button playBtn = v.findViewById(R.id.play_btn);
+        oldie_song = MediaPlayer.create(getActivity(), R.raw.oldie_song);
+
+
+        playBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                oldie_song.start();
+
+            }
+        });
+
+
     }
 }

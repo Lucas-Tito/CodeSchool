@@ -3,17 +3,21 @@ package com.example.trabalho1;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link Fragment_RecycleView#newInstance} factory method to
- * create an instance of this fragment.
- */
+
 public class Fragment_RecycleView extends Fragment {
+
+    androidx.recyclerview.widget.RecyclerView recyclerView;
+
+    String langs_titles[], langs_descs[];
+    int images[] = {R.drawable.programinglang_cplspls, R.drawable.programinglang_java, R.drawable.programinglang_js,
+            R.drawable.programinglang_python, R.drawable.programinglang_react, R.drawable.programinglang_ts, R.drawable.programinglang_ruby,
+            R.drawable.programinglang_vsbasic, R.drawable.programinglang_csharp};
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -56,9 +60,20 @@ public class Fragment_RecycleView extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
+        View v = inflater.inflate(R.layout.fragment__recycle_view, container, false);
+
+        langs_titles = getResources().getStringArray(R.array.programing_langs);
+        langs_descs = getResources().getStringArray(R.array.langs_description);
+
+        recyclerView = v.findViewById(R.id.recyclerView);
+
+        recyclerViewAdapter myAdapter = new recyclerViewAdapter(getActivity(), langs_titles, langs_descs, images);
+        recyclerView.setAdapter(myAdapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment__recycle_view, container, false);
+        return v;
     }
 }

@@ -1,5 +1,10 @@
 package com.example.trabalho1;
 
+import android.content.Context;
+import android.content.pm.PackageManager;
+import android.hardware.camera2.CameraAccessException;
+import android.hardware.camera2.CameraManager;
+import android.os.Build;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,6 +12,12 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
+import android.widget.CompoundButton;
+import android.widget.Spinner;
+import android.widget.Toast;
+import android.widget.ToggleButton;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -59,6 +70,100 @@ public class Fragment_Misc_Elements1 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_misc__elements1, container, false);
+        View v =  inflater.inflate(R.layout.fragment_misc__elements1, container, false);
+
+
+
+        build_toggle_button(v);
+        build_autocomplete_countries(v);
+        build_spinner(v);
+
+
+        return v;
+
     }
+
+
+
+
+    private void build_toggle_button(View v){
+
+        ToggleButton tgl_btn = v.findViewById(R.id.toggleButton);
+        CameraManager cameraManager = (CameraManager) getActivity().getSystemService(Context.CAMERA_SERVICE);
+
+        tgl_btn.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
+                String getCameraId;
+
+                if(!isChecked){
+                    try {
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                            String cameraId = cameraManager.getCameraIdList()[0];
+                            cameraManager.setTorchMode(cameraId,false);
+                        }
+                    } catch (CameraAccessException e) {
+                        e.printStackTrace();
+                    }
+                }
+                else{
+                    if(getActivity().getPackageManager().hasSystemFeature(PackageManager.FEATURE_CAMERA_FLASH))
+                    {
+                        //dipositivo tem flash
+                        try {
+
+                            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                                getCameraId = cameraManager.getCameraIdList()[0];
+                                cameraManager.setTorchMode(getCameraId,true  );
+                            }
+                        } catch (CameraAccessException e) {
+                            e.printStackTrace();
+                        }
+                    }else
+                    {
+                        Toast.makeText(getContext(), "Esse dispositivo não possui flash", Toast.LENGTH_SHORT).show();
+                        compoundButton.setChecked(false);
+                    }
+                }
+            }
+        });
+    }
+
+
+
+
+
+
+
+
+    private void build_autocomplete_countries(View v) {
+
+        String[] countries = {"Afghanistan","Albania","Algeria","Andorra","Angola","Anguilla","Antigua &amp; Barbuda","Argentina","Armenia","Aruba","Australia","Austria","Azerbaijan","Bahamas","Bahrain","Bangladesh","Barbados","Belarus","Belgium","Belize","Benin","Bermuda","Bhutan","Bolivia","Bosnia &amp; Herzegovina","Botswana","Brazil","British Virgin Islands","Brunei","Bulgaria","Burkina Faso","Burundi","Cambodia","Cameroon","Cape Verde","Cayman Islands","Chad","Chile","China","Colombia","Congo","Cook Islands","Costa Rica","Cote D Ivoire","Croatia","Cruise Ship","Cuba","Cyprus","Czech Republic","Denmark","Djibouti","Dominica","Dominican Republic","Ecuador","Egypt","El Salvador","Equatorial Guinea","Estonia","Ethiopia","Falkland Islands","Faroe Islands","Fiji","Finland","France","French Polynesia","French West Indies","Gabon","Gambia","Georgia","Germany","Ghana","Gibraltar","Greece","Greenland","Grenada","Guam","Guatemala","Guernsey","Guinea","Guinea Bissau","Guyana","Haiti","Honduras","Hong Kong","Hungary","Iceland","India","Indonesia","Iran","Iraq","Ireland","Isle of Man","Israel","Italy","Jamaica","Japan","Jersey","Jordan","Kazakhstan","Kenya","Kuwait","Kyrgyz Republic","Laos","Latvia","Lebanon","Lesotho","Liberia","Libya","Liechtenstein","Lithuania","Luxembourg","Macau","Macedonia","Madagascar","Malawi","Malaysia","Maldives","Mali","Malta","Mauritania","Mauritius","Mexico","Moldova","Monaco","Mongolia","Montenegro","Montserrat","Morocco","Mozambique","Namibia","Nepal","Netherlands","Netherlands Antilles","New Caledonia","New Zealand","Nicaragua","Niger","Nigeria","Norway","Oman","Pakistan","Palestine","Panama","Papua New Guinea","Paraguay","Peru","Philippines","Poland","Portugal","Puerto Rico","Qatar","Reunion","Romania","Russia","Rwanda","Saint Pierre &amp; Miquelon","Samoa","San Marino","Satellite","Saudi Arabia","Senegal","Serbia","Seychelles","Sierra Leone","Singapore","Slovakia","Slovenia","South Africa","South Korea","Spain","Sri Lanka","St Kitts &amp; Nevis","St Lucia","St Vincent","St. Lucia","Sudan","Suriname","Swaziland","Sweden","Switzerland","Syria","Taiwan","Tajikistan","Tanzania","Thailand","Timor L'Este","Togo","Tonga","Trinidad &amp; Tobago","Tunisia","Turkey","Turkmenistan","Turks &amp; Caicos","Uganda","Ukraine","United Arab Emirates","United Kingdom","Uruguay","Uzbekistan","Venezuela","Vietnam","Virgin Islands (US)","Yemen","Zambia","Zimbabwe"};
+
+        AutoCompleteTextView autocomplete = v.findViewById(R.id.autoCompleteTextView);
+
+        //converte o array em elementos do autocomplete
+        ArrayAdapter Caa = new ArrayAdapter(getActivity(), android.R.layout.simple_list_item_1, countries);
+        autocomplete.setAdapter(Caa);
+        //-----------------------------------------
+
+    }
+
+
+
+    private void build_spinner(View v){
+
+        String[] dropdown_menu = {"somos", "elementos", "do array"};
+        Spinner spinner = v.findViewById(R.id.dropdown_menu);
+
+        //converte o array em elementos do dropdown
+        ArrayAdapter aa = new ArrayAdapter(getActivity(), android.R.layout.simple_spinner_item, dropdown_menu);
+        aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(aa);
+        //-----------------------------------------
+
+    }
+
+
+
 }

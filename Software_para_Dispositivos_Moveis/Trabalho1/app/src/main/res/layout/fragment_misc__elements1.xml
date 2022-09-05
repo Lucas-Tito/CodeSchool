@@ -9,7 +9,9 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="37dp">
 
         <TextView
             android:id="@+id/ToggleButtonLable"
@@ -26,7 +28,7 @@
             android:id="@+id/toggleButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="136dp"
+            android:layout_marginTop="100dp"
             android:text="ToggleButton"
             android:textOff="Flash Off"
             android:textOn="Flash On"
@@ -34,7 +36,6 @@
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="@+id/guideline3"
             app:layout_constraintTop_toTopOf="parent" />
-
 
         <TextView
             android:id="@+id/EditTextLable"
@@ -52,15 +53,15 @@
             android:id="@+id/editTextTextPersonName"
             android:layout_width="166dp"
             android:layout_height="47dp"
-            android:layout_marginTop="96dp"
+            android:layout_marginTop="90dp"
             android:drawableLeft="@drawable/ic_baseline_person_24"
             android:ems="10"
             android:hint="Name"
             android:inputType="textPersonName"
-            app:layout_constraintEnd_toStartOf="@+id/guideline2"
+            app:layout_constraintEnd_toStartOf="@+id/guideline4"
+            app:layout_constraintHorizontal_bias="0.495"
             app:layout_constraintStart_toStartOf="@+id/guideline3"
-            app:layout_constraintTop_toBottomOf="@+id/toggleButton" />
-
+            app:layout_constraintTop_toTopOf="@+id/guideline8" />
 
         <TextView
             android:id="@+id/textView"
@@ -78,14 +79,13 @@
             android:id="@+id/dropdown_menu"
             android:layout_width="191dp"
             android:layout_height="29dp"
+            android:layout_marginBottom="100dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/guideline4"
+            app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="@+id/guideline3"
-            app:layout_constraintTop_toBottomOf="@+id/toggleButton"
-            app:layout_constraintVertical_bias="0.561" />
-
-
-
+            app:layout_constraintTop_toBottomOf="@+id/autoCompleteTextView"
+            app:layout_constraintVertical_bias="1.0" />
 
         <TextView
             android:id="@+id/autoCompleteLable"
@@ -97,8 +97,7 @@
             app:layout_constraintEnd_toEndOf="@+id/autoCompleteTextView"
             app:layout_constraintStart_toStartOf="@+id/autoCompleteTextView" />
 
-
-
+        <!--
         <Button
             android:id="@+id/nextScreenBtn"
             android:layout_width="140dp"
@@ -112,7 +111,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 
-
+        -->
         <!--__________________GUIDELINES____________________________-->
 
 
@@ -120,12 +119,13 @@
             android:id="@+id/autoCompleteTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="96dp"
+            android:layout_marginBottom="70dp"
             android:completionThreshold="1"
             android:hint="@string/autoCompleteHint"
+            app:layout_constraintBottom_toTopOf="@+id/guideline10"
             app:layout_constraintEnd_toStartOf="@+id/guideline4"
-            app:layout_constraintStart_toStartOf="@+id/guideline2"
-            app:layout_constraintTop_toBottomOf="@+id/toggleButton" />
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="@+id/guideline3" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline3"
@@ -147,6 +147,20 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             app:layout_constraintGuide_percent="0.5" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.25" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.75" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
