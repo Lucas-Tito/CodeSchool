@@ -5,7 +5,7 @@
 <br><br>
 
 
-### Features<br>
+### Implemented Features<br>
 + RecyclerView (with listView)
 + autoComplete editText
 + Music Button
