@@ -4,6 +4,11 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.viewpager.widget.ViewPager;
+import androidx.viewpager2.adapter.FragmentStateAdapter;
+import androidx.viewpager2.widget.ViewPager2;
 
 import android.content.pm.PackageManager;
 import android.content.Context;
@@ -23,14 +28,15 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.Spinner;
+import android.widget.TableLayout;
 import android.widget.Toast;
 import android.widget.ToggleButton;
+
+import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,15 +48,17 @@ public class MainActivity extends AppCompatActivity {
         toolbar.setTitle("");
         setSupportActionBar(toolbar);
 
+        build_tab_layout();
+
+        /*
         build_spinner();
         build_autocomplete_countries();
         build_btn_nextScreen();
         build_toggle_button();
-
-
+        */
     }
 
-
+    //---------------------------TOOLBAR------------------------------------------------------------+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
 
@@ -58,7 +66,6 @@ public class MainActivity extends AppCompatActivity {
     return super.onCreateOptionsMenu(menu);
 
     }
-
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
@@ -68,51 +75,84 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+
+    }
+    //----------------------------------------------------------------------------------------------+
+
+
+
+    private void build_tab_layout(){
+        TabLayout tabLayout = findViewById(R.id.tabLayout);
+        ViewPager2 viewPager = findViewById(R.id.viewPager);
+
+        FragmentAdapter fgAdapter = new FragmentAdapter(this);
+
+        viewPager.setAdapter(fgAdapter);
+
+        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                viewPager.setCurrentItem(tab.getPosition());
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
+
     }
 
-
+    /*
     private void build_toggle_button(){
 
         ToggleButton tgl_btn = findViewById(R.id.toggleButton);
         CameraManager cameraManager = (CameraManager) getSystemService(Context.CAMERA_SERVICE);
 
-    tgl_btn.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-        @Override
-        public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
-            String getCameraId;
+        tgl_btn.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
+                String getCameraId;
 
-            if(!isChecked){
-                try {
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                        String cameraId = cameraManager.getCameraIdList()[0];
-                        cameraManager.setTorchMode(cameraId,false);
-                    }
-                } catch (CameraAccessException e) {
-                    e.printStackTrace();
-                }
-            }
-            else{
-                if(getPackageManager().hasSystemFeature(PackageManager.FEATURE_CAMERA_FLASH))
-                {
-                    //dipositivo tem flash
+                if(!isChecked){
                     try {
-
                         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                            getCameraId = cameraManager.getCameraIdList()[0];
-                            cameraManager.setTorchMode(getCameraId,true  );
+                            String cameraId = cameraManager.getCameraIdList()[0];
+                            cameraManager.setTorchMode(cameraId,false);
                         }
                     } catch (CameraAccessException e) {
                         e.printStackTrace();
                     }
-                }else
-                {
-                    Toast.makeText(MainActivity.this, "Esse dispositivo não possui flash", Toast.LENGTH_SHORT).show();
-                    compoundButton.setChecked(false);
+                }
+                else{
+                    if(getPackageManager().hasSystemFeature(PackageManager.FEATURE_CAMERA_FLASH))
+                    {
+                        //dipositivo tem flash
+                        try {
+
+                            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                                getCameraId = cameraManager.getCameraIdList()[0];
+                                cameraManager.setTorchMode(getCameraId,true  );
+                            }
+                        } catch (CameraAccessException e) {
+                            e.printStackTrace();
+                        }
+                    }else
+                    {
+                        Toast.makeText(MainActivity.this, "Esse dispositivo não possui flash", Toast.LENGTH_SHORT).show();
+                        compoundButton.setChecked(false);
+                    }
                 }
             }
-        }
-    });
+        });
     }
+
+
 
     private void build_spinner(){
 
@@ -142,6 +182,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+
     private void build_btn_nextScreen() {
 
         Button btnNextScreen = findViewById(R.id.nextScreenBtn);
@@ -150,7 +191,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Intent secondaryScreen = new Intent(getApplicationContext(),SecondScreen.class);
+                Intent secondaryScreen = new Intent(getApplicationContext(), SecondScreen.class);
                 startActivity(secondaryScreen);
                 //muda a animação de transição para second_screen
                 overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
@@ -169,9 +210,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         });
-
-
     }
-
+*/
 
 }

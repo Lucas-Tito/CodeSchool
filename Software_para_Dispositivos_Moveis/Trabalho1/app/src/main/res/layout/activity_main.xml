@@ -7,7 +7,7 @@
     tools:context=".MainActivity">
 
 
-    <!--ACTION BAR-->
+    <!--_________________ACTION BAR_________________________________-->
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
@@ -41,8 +41,58 @@
 
             </RelativeLayout>
         </androidx.appcompat.widget.Toolbar>
-    </com.google.android.material.appbar.AppBarLayout>
 
+
+        <!-- _________________________TABLAYOUT__________________________ -->
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Misc1" />
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Misc2" />
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="RelativeLayout" />
+        </com.google.android.material.tabs.TabLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+    <!-- __________________________________________________________ -->
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_below="@+id/appBarLayout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout" />
+
+
+
+
+
+
+
+    <!-- <TextView
+        android:id="@+id/ToggleButtonLable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:text="@string/ToggleButtonLable"
+        app:layout_constraintBottom_toTopOf="@+id/toggleButton"
+        app:layout_constraintEnd_toEndOf="@+id/toggleButton"
+        app:layout_constraintHorizontal_bias="0.47"
+        app:layout_constraintStart_toStartOf="@+id/toggleButton" />
 
     <ToggleButton
         android:id="@+id/toggleButton"
@@ -56,6 +106,18 @@
         app:layout_constraintBottom_toTopOf="@+id/textView"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
         app:layout_constraintTop_toBottomOf="@+id/appBarLayout" />
+
+    <TextView
+        android:id="@+id/EditTextLable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="@string/EditTextLable"
+        app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName"
+        app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName"
+        app:layout_constraintHorizontal_bias="0.511"
+        app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName" />
+
 
     <EditText
         android:id="@+id/editTextTextPersonName"
@@ -73,16 +135,17 @@
         app:layout_constraintStart_toStartOf="@+id/guideline2"
         app:layout_constraintTop_toBottomOf="@+id/appBarLayout" />
 
+
     <TextView
-        android:id="@+id/EditTextLable"
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:text="@string/EditTextLable"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName"
-        app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName"
-        app:layout_constraintHorizontal_bias="0.511"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName" />
+        android:layout_marginBottom="20dp"
+        android:text="@string/dropdownLable"
+        app:layout_constraintBottom_toTopOf="@+id/dropdown_menu"
+        app:layout_constraintEnd_toEndOf="@+id/dropdown_menu"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toStartOf="@+id/dropdown_menu" />
 
     <Spinner
         android:id="@+id/dropdown_menu"
@@ -95,16 +158,6 @@
         app:layout_constraintTop_toBottomOf="@+id/appBarLayout"
         app:layout_constraintVertical_bias="0.423" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:text="@string/dropdownLable"
-        app:layout_constraintBottom_toTopOf="@+id/dropdown_menu"
-        app:layout_constraintEnd_toEndOf="@+id/dropdown_menu"
-        app:layout_constraintHorizontal_bias="0.4"
-        app:layout_constraintStart_toStartOf="@+id/dropdown_menu" />
 
     <AutoCompleteTextView
         android:id="@+id/autoCompleteTextView"
@@ -129,23 +182,6 @@
         app:layout_constraintEnd_toEndOf="@+id/autoCompleteTextView"
         app:layout_constraintStart_toStartOf="@+id/autoCompleteTextView" />
 
-    <TextView
-        android:id="@+id/ToggleButtonLable"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
-        android:text="@string/ToggleButtonLable"
-        app:layout_constraintBottom_toTopOf="@+id/toggleButton"
-        app:layout_constraintEnd_toEndOf="@+id/toggleButton"
-        app:layout_constraintHorizontal_bias="0.47"
-        app:layout_constraintStart_toStartOf="@+id/toggleButton" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.5" />
 
     <Button
         android:id="@+id/nextScreenBtn"
@@ -173,5 +209,12 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_end="20dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" /> -->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
