@@ -22,7 +22,7 @@ import android.widget.ToggleButton;
 public class Fragment_Misc_Elements2 extends Fragment {
     //initialize song
     MediaPlayer oldie_song;
-
+    boolean playBtn_wasClicked = false;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -57,10 +57,17 @@ public class Fragment_Misc_Elements2 extends Fragment {
     @Override
     public void onPause() {
         super.onPause();
-        //pause song when fragment is away
-        oldie_song.pause();
+        /**pause song when fragment is away
+         * if is used to prevent weird bug when trying to start music again
+         */
+        if(playBtn_wasClicked)
+            oldie_song.pause();
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -87,11 +94,11 @@ public class Fragment_Misc_Elements2 extends Fragment {
 
         Button playBtn = v.findViewById(R.id.play_btn);
         oldie_song = MediaPlayer.create(getActivity(), R.raw.oldie_song);
-
         playBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 oldie_song.start();
+                playBtn_wasClicked = true;
             }
         });
 
