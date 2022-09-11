@@ -1,3 +1,8 @@
 Mobile_Software_Development/Trabalho1/local.properties
 Programming_Fundamentals/**/*.exe
 Object-Oriented_Programing/**/*.class
+
+#files created by intelij
+**/*.iml
+**/*.idea
+**/out
