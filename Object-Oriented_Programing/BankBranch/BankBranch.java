@@ -6,7 +6,7 @@ class BankBranch {
     private Map<Integer, Account> accounts;
     private int nextAccountId = 0;
 
-    //obtém conta ou lança exceção
+
     //private Account getAccount(int id);
 
     public BankBranch(){
@@ -16,19 +16,19 @@ class BankBranch {
 
     }
 
-    //se o cliente não existir
-    //cria o cliente
-    //cria uma conta poupança e uma conta corrent para o cliente
-    //adiciona essas contas no vetor de contas e no vetor do cliente
-    //adiciona o cliente no mapa de clientes
+    //if client doesn't exists
+    //client is created
+    //creates checking and savings account too
+    //add these accounts to accounts array and array on client
+    //add client to clients map
     public void addClient(String clientIdToAdd){
 
         if(clients.containsKey(clientIdToAdd))
-            System.out.println("fail: cliente ja cadastrado");
+            System.out.println("fail: client already registered");
         else{
-            clients.put(clientIdToAdd, new Client(clientIdToAdd));  //Adiciona o client no Map clients
+            clients.put(clientIdToAdd, new Client(clientIdToAdd));  //Adds client to clients map
 
-            //Cria o objeto cliente e as respectivas contas a serem adicionadas
+            //Create client object and his respective accounts
             Client c = clients.get(clientIdToAdd);
             int CcId = nextAccountId++;
             Account CcAccount = new CheckingAccount(CcId, clientIdToAdd);
@@ -37,43 +37,43 @@ class BankBranch {
            
             
             c.addAccount(CcAccount);
-            c.addAccount(CpAccount);    // Adiciona as contas ao objeto cliente
+            c.addAccount(CpAccount);    //Add accounts to client object
             
 
             accounts.put(CcId, CcAccount);
-            accounts.put(CpId, CpAccount);  //Adicionas as contas ao Map accounts
+            accounts.put(CpId, CpAccount);  //Add accounts to accounts map
             
 
         }
 
     }
-    //obtem o cliente e invoca as ações
-    public void withdraw(int idConta, float valueToWithdraw){
+    //gets tbe client and invoke actions
+    public void withdraw(int idAccount, float valueToWithdraw){
 
-        Account accountToWithdrawFrom = accounts.get(idConta);
+        Account accountToWithdrawFrom = accounts.get(idAccount);
         accountToWithdrawFrom.withdraw(valueToWithdraw);
 
     }
 
 
-    public void deposit(int idConta, float valueToDeposit){
+    public void deposit(int idAccount, float valueToDeposit){
 
-        Account accountToDeposiIn = accounts.get(idConta);
-        accountToDeposiIn.deposit(valueToDeposit);
+        Account accountToDepositIn = accounts.get(idAccount);
+        accountToDepositIn.deposit(valueToDeposit);
 
     }
 
-    public void transfer(int IdcontaDe, int IdcontaPara, float valueToTransfer){
+    public void transfer(int IdAccountTransferring, int IdAccountReceiving, float valueToTransfer){
 
-        Account accountToGive = accounts.get(IdcontaDe);
-        Account accountToRecieve = accounts.get(IdcontaPara);
+        Account accountToGive = accounts.get(IdAccountTransferring);
+        Account accountToReceive = accounts.get(IdAccountReceiving);
 
-        if(accounts.containsKey(IdcontaDe) && accounts.containsKey(IdcontaPara)){
+        if(accounts.containsKey(IdAccountTransferring) && accounts.containsKey(IdAccountReceiving)){
             accountToGive.withdraw(valueToTransfer);
-            accountToRecieve.deposit(valueToTransfer);
+            accountToReceive.deposit(valueToTransfer);
         }
         else
-            System.out.println("fail: conta nao encontrada");
+            System.out.println("fail: account not found");
 
     }
     
@@ -88,13 +88,13 @@ class BankBranch {
         String show = "";
 
         show += "Clients:" + "\n";
-        for(String id: clients.keySet()) // printa os clientes
+        for(String id: clients.keySet()) // prints clients
             show += clients.get(id) + "\n";
         
 
 
         show += "Accounts:" + "\n";
-        for(Integer id: accounts.keySet()) // printa as contas 
+        for(Integer id: accounts.keySet()) // prints accounts
                 show += accounts.get(id) + "\n";
         
 

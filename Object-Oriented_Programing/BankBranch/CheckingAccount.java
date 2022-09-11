@@ -1,5 +1,5 @@
 class CheckingAccount extends Account {
-    //inicializa conta.type com "CC"
+    //initializes account.type with "CC"
     public CheckingAccount(int id, String idClient){
 
         super(id, idClient);
@@ -7,7 +7,7 @@ class CheckingAccount extends Account {
 
     }
 
-    //retira 20 do saldo
+    //removes 20 from balance
     public void monthlyUpdate(){
 
         super.balance -= 20;

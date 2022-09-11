@@ -7,7 +7,7 @@ class SavingsAccount extends Account {
 
     }
 
-    //aumenta saldo em 1%
+    //increases balance in 1%
     public void monthlyUpdate(){
 
         super.balance += balance*0.01;

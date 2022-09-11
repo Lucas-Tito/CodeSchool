@@ -15,7 +15,6 @@ abstract class Account {
     //abstract method
     public abstract void monthlyUpdate();
 
-    //saque
     public void withdraw(float value){
 
         if(value <= balance)
@@ -25,14 +24,13 @@ abstract class Account {
 
     }
 
-    //deposito
     public void deposit(float value){
 
         balance += value;
 
     }
 
-    //transferencia para outra conta
+
     //public void transfer(Account other, float value){}
 
     public String toString(){
