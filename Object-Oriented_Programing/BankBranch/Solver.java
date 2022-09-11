@@ -3,7 +3,7 @@ import java.util.Scanner;
 class Solver{
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        BankAgency agency = new BankAgency();
+        BankBranch agency = new BankBranch();
         while(true){
             try {
                 String line = scanner.nextLine();

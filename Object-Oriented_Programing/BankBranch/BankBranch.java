@@ -1,7 +1,7 @@
 import java.util.Map;
 import java.util.HashMap;
 
-class BankAgency {
+class BankBranch {
     private Map<String, Client> clients;
     private Map<Integer, Account> accounts;
     private int nextAccountId = 0;
@@ -9,7 +9,7 @@ class BankAgency {
     //obtém conta ou lança exceção
     //private Account getAccount(int id);
 
-    public BankAgency(){
+    public BankBranch(){
 
         clients = new HashMap<String, Client>();
         accounts = new HashMap<Integer, Account>();
