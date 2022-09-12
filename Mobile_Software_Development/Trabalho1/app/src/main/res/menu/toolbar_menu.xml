@@ -7,7 +7,7 @@
         android:id="@+id/search_btn"
         android:title="Search"
         app:showAsAction="ifRoom"
-        android:icon="@drawable/ic_search"/>
+        android:icon="@drawable/toolbar_search_ic"/>
 
     <item
         android:id="@+id/settings_btn"

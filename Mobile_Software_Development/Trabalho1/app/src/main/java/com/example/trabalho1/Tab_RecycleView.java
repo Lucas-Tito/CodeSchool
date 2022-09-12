@@ -10,7 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 
-public class Fragment_RecycleView extends Fragment {
+public class Tab_RecycleView extends Fragment {
 
     androidx.recyclerview.widget.RecyclerView recyclerView;
 
@@ -28,7 +28,7 @@ public class Fragment_RecycleView extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public Fragment_RecycleView() {
+    public Tab_RecycleView() {
         // Required empty public constructor
     }
 
@@ -41,8 +41,8 @@ public class Fragment_RecycleView extends Fragment {
      * @return A new instance of fragment Fragment_RecycleView.
      */
     // TODO: Rename and change types and number of parameters
-    public static Fragment_RecycleView newInstance(String param1, String param2) {
-        Fragment_RecycleView fragment = new Fragment_RecycleView();
+    public static Tab_RecycleView newInstance(String param1, String param2) {
+        Tab_RecycleView fragment = new Tab_RecycleView();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -62,14 +62,14 @@ public class Fragment_RecycleView extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        View v = inflater.inflate(R.layout.fragment_recycle_view, container, false);
+        View v = inflater.inflate(R.layout.tab_recycler_view, container, false);
 
         langs_titles = getResources().getStringArray(R.array.programing_langs);
         langs_descs = getResources().getStringArray(R.array.langs_description);
 
         recyclerView = v.findViewById(R.id.recyclerView);
 
-        recyclerViewAdapter myAdapter = new recyclerViewAdapter(getActivity(), langs_titles, langs_descs, images);
+        Adapter_RecyclerView myAdapter = new Adapter_RecyclerView(getActivity(), langs_titles, langs_descs, images);
         recyclerView.setAdapter(myAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 

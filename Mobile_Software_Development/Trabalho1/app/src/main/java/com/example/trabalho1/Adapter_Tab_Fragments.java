@@ -5,10 +5,10 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
-public class FragmentAdapter extends FragmentStateAdapter {
+public class Adapter_Tab_Fragments extends FragmentStateAdapter {
 
     //This class is used to implement tabLayout from main_activity
-    public FragmentAdapter(@NonNull FragmentActivity fragmentActivity) {
+    public Adapter_Tab_Fragments(@NonNull FragmentActivity fragmentActivity) {
         super(fragmentActivity);
     }
 
@@ -17,16 +17,16 @@ public class FragmentAdapter extends FragmentStateAdapter {
     public Fragment createFragment(int position) {
         switch (position){
             case 0:
-                return new Fragment_Misc_Elements1();
+                return new Tab_Misc_Elements1();
 
             case 1:
-                return new Fragment_Misc_Elements2();
+                return new Tab_Misc_Elements2();
 
             case 2:
-                return new Fragment_RecycleView();
+                return new Tab_RecycleView();
 
             default:
-                return new Fragment_Misc_Elements1();
+                return new Tab_Misc_Elements1();
         }
     }
 

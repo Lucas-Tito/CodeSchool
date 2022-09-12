@@ -19,18 +19,18 @@ public class MainActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+       /*
         //--------------toolbar----------------------+
         Toolbar toolbar = findViewById(R.id.toolbar);
         toolbar.setTitle("");
         setSupportActionBar(toolbar);
-        //-------------------------------------------+
+        //-------------------------------------------+*/
 
-        build_tab_layout();
+        //build_tab_layout();
 
     }
 
-    //---------------------------TOOLBAR------------------------------------------------------------+
+    /*//---------------------------TOOLBAR------------------------------------------------------------+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
 
@@ -51,13 +51,13 @@ public class MainActivity extends AppCompatActivity {
     }
     //----------------------------------------------------------------------------------------------+
 
+*/
 
-
-    private void build_tab_layout(){
+    /*private void build_tab_layout(){
         TabLayout tabLayout = findViewById(R.id.tabLayout);
         ViewPager2 viewPager = findViewById(R.id.viewPager);
 
-        FragmentAdapter fgAdapter = new FragmentAdapter(this);
+        Adapter_Fragment fgAdapter = new Adapter_Fragment(this);
 
         viewPager.setAdapter(fgAdapter);
 
@@ -86,6 +86,6 @@ public class MainActivity extends AppCompatActivity {
                 tabLayout.getTabAt(position).select();
             }
         });
-    }
+    }*/
 
 }

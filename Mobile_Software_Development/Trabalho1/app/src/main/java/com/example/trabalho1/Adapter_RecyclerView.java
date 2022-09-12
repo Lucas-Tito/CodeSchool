@@ -10,13 +10,13 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class recyclerViewAdapter extends RecyclerView.Adapter<recyclerViewAdapter.MyViewHolder> {
+public class Adapter_RecyclerView extends RecyclerView.Adapter<Adapter_RecyclerView.MyViewHolder> {
 
     String data1[], data2[];
     int images[];
     Context context;
 
-    public recyclerViewAdapter(Context ct, String lang_titles[], String lang_desc[], int images[]){
+    public Adapter_RecyclerView(Context ct, String lang_titles[], String lang_desc[], int images[]){
         context = ct;
         data1 = lang_titles;
         data2 = lang_desc;
@@ -27,7 +27,7 @@ public class recyclerViewAdapter extends RecyclerView.Adapter<recyclerViewAdapte
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(context);
-        View view = inflater.inflate(R.layout.my_row, parent, false);
+        View view = inflater.inflate(R.layout.tab_recycler_view_elements, parent, false);
 
         return new MyViewHolder(view);
     }

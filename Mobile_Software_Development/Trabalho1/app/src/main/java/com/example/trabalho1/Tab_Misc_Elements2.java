@@ -19,7 +19,7 @@ import android.widget.Toast;
 import android.widget.ToggleButton;
 
 
-public class Fragment_Misc_Elements2 extends Fragment {
+public class Tab_Misc_Elements2 extends Fragment {
     //initialize song
     MediaPlayer oldie_song;
     boolean playBtn_wasClicked = false;
@@ -32,7 +32,7 @@ public class Fragment_Misc_Elements2 extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public Fragment_Misc_Elements2() {
+    public Tab_Misc_Elements2() {
         // Required empty public constructor
     }
 
@@ -45,8 +45,8 @@ public class Fragment_Misc_Elements2 extends Fragment {
      * @return A new instance of fragment Misc_Elements2.
      */
     // TODO: Rename and change types and number of parameters
-    public static Fragment_Misc_Elements2 newInstance(String param1, String param2) {
-        Fragment_Misc_Elements2 fragment = new Fragment_Misc_Elements2();
+    public static Tab_Misc_Elements2 newInstance(String param1, String param2) {
+        Tab_Misc_Elements2 fragment = new Tab_Misc_Elements2();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -81,7 +81,7 @@ public class Fragment_Misc_Elements2 extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v = inflater.inflate(R.layout.fragment_misc_elements2, container, false);
+        View v = inflater.inflate(R.layout.tab_misc_elements2, container, false);
 
         build_play_btn(v);
         build_toggle_button(v);

@@ -1,10 +1,5 @@
 package com.example.trabalho1;
 
-import android.content.Context;
-import android.content.pm.PackageManager;
-import android.hardware.camera2.CameraAccessException;
-import android.hardware.camera2.CameraManager;
-import android.os.Build;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -14,13 +9,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
-import android.widget.CompoundButton;
 import android.widget.Spinner;
-import android.widget.Toast;
-import android.widget.ToggleButton;
 
 
-public class Fragment_Misc_Elements1 extends Fragment {
+public class Tab_Misc_Elements1 extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -31,7 +23,7 @@ public class Fragment_Misc_Elements1 extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public Fragment_Misc_Elements1() {
+    public Tab_Misc_Elements1() {
         // Required empty public constructor
     }
 
@@ -44,8 +36,8 @@ public class Fragment_Misc_Elements1 extends Fragment {
      * @return A new instance of fragment Misc_Elements1.
      */
     // TODO: Rename and change types and number of parameters
-    public static Fragment_Misc_Elements1 newInstance(String param1, String param2) {
-        Fragment_Misc_Elements1 fragment = new Fragment_Misc_Elements1();
+    public static Tab_Misc_Elements1 newInstance(String param1, String param2) {
+        Tab_Misc_Elements1 fragment = new Tab_Misc_Elements1();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -66,7 +58,7 @@ public class Fragment_Misc_Elements1 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v =  inflater.inflate(R.layout.fragment_misc_elements1, container, false);
+        View v =  inflater.inflate(R.layout.tab_misc_elements1, container, false);
 
         build_autocomplete_countries(v);
         build_spinner(v);
