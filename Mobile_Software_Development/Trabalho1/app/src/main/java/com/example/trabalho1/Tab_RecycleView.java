@@ -15,9 +15,9 @@ public class Tab_RecycleView extends Fragment {
     androidx.recyclerview.widget.RecyclerView recyclerView;
 
     String langs_titles[], langs_descs[];
-    int images[] = {R.drawable.programinglang_cplspls, R.drawable.programinglang_java, R.drawable.programinglang_js,
-            R.drawable.programinglang_python, R.drawable.programinglang_react, R.drawable.programinglang_ts, R.drawable.programinglang_ruby,
-            R.drawable.programinglang_vsbasic, R.drawable.programinglang_csharp};
+    int images[] = {R.drawable.pglang_cplspls, R.drawable.pglang_java, R.drawable.pglang_js,
+            R.drawable.pglang_python, R.drawable.pglang_react, R.drawable.pglang_ts, R.drawable.pglang_ruby,
+            R.drawable.pglang_vsbasic, R.drawable.pglang_csharp};
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
