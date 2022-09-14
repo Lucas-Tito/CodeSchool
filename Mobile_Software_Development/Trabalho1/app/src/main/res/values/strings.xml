@@ -15,8 +15,6 @@
     <!-- ________________________________________________ -->
 
 
-
-
     <!-- ____________fragment_misc_elements1 strings______________ -->
 
     <string name="ToggleButtonLable">I\'m toggle button</string>
@@ -29,7 +27,6 @@
     <!-- __________________________________________________________ -->
 
 
-
     <!-- ____________fragment_misc_elements2 strings______________ -->
 
     <string name="radio_btnLable">I\'m an radio button</string>
@@ -39,8 +36,6 @@
     <string name="play_btn"> Play an oldie</string>
 
     <!-- __________________________________________________________ -->
-
-
 
 
     <!-- ______________RECYCLER_VIEW_______________ -->
@@ -68,7 +63,7 @@
         <item>This is a random description</item>
         <item>This is a random description</item>
     </string-array>
-<!-- TODO: Remove or change this placeholder text -->
+    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <!-- _____________________________________________ -->

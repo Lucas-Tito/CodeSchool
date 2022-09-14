@@ -147,6 +147,14 @@ public class Tab_Misc_Elements2 extends Fragment {
                 }
             }
         });
+
+        tgl_btn.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View view) {
+                Toast.makeText(getActivity(), "you clicked me for a long time", Toast.LENGTH_SHORT).show();
+                return false;
+            }
+        });
     }
 
 

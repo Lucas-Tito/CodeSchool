@@ -1,91 +1,60 @@
 package com.example.trabalho1;
 
 import android.os.Bundle;
-import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.viewpager2.widget.ViewPager2;
+import androidx.fragment.app.Fragment;
 
-import com.google.android.material.tabs.TabLayout;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-       /*
-        //--------------toolbar----------------------+
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        toolbar.setTitle("");
-        setSupportActionBar(toolbar);
-        //-------------------------------------------+*/
 
-        //build_tab_layout();
+        build_bottom_nav();
 
     }
 
-    /*//---------------------------TOOLBAR------------------------------------------------------------+
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
 
-    getMenuInflater().inflate(R.menu.main_menu, menu);
-    return super.onCreateOptionsMenu(menu);
 
-    }
+    public void build_bottom_nav(){
 
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        BottomNavigationView bottom_nav_view;
 
-        if(item.getItemId() == R.id.settings_btn){
-            Toast.makeText(MainActivity.this, "you clicked in settings", Toast.LENGTH_LONG).show();
-        }
+        bottom_nav_view = findViewById(R.id.bottomNavigationView);
+        getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout, new Tab_Layout()).commit();
+        bottom_nav_view.setSelectedItemId(R.id.home);
 
-        return super.onOptionsItemSelected(item);
-
-    }
-    //----------------------------------------------------------------------------------------------+
-
-*/
-
-    /*private void build_tab_layout(){
-        TabLayout tabLayout = findViewById(R.id.tabLayout);
-        ViewPager2 viewPager = findViewById(R.id.viewPager);
-
-        Adapter_Fragment fgAdapter = new Adapter_Fragment(this);
-
-        viewPager.setAdapter(fgAdapter);
-
-        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+        bottom_nav_view.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
-            public void onTabSelected(TabLayout.Tab tab) {
-                viewPager.setCurrentItem(tab.getPosition());
-            }
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                Fragment fragment = null;
 
-            @Override
-            public void onTabUnselected(TabLayout.Tab tab) {
+                switch (item.getItemId()){
 
-            }
+                    case R.id.home:
+                        fragment = new Tab_Layout();
+                        break;
 
-            @Override
-            public void onTabReselected(TabLayout.Tab tab) {
+                    case R.id.grid:
+                        fragment = new Grid_View();
+                        break;
 
+                }
+                getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout, fragment).commit();
+                return true;
             }
         });
 
-        //this method is used to tab update the fragment selected when swapping betwen the fragments
-        viewPager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
-            @Override
-            public void onPageSelected(int position) {
-                super.onPageSelected(position);
-                tabLayout.getTabAt(position).select();
-            }
-        });
-    }*/
+    }
+
+
 
 }

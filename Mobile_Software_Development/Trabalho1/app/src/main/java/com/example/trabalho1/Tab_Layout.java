@@ -3,6 +3,7 @@ package com.example.trabalho1;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
@@ -70,9 +71,9 @@ public class Tab_Layout extends Fragment {
         //--------------toolbar----------------------+
         Toolbar toolbar = v.findViewById(R.id.toolbar);
         toolbar.setTitle("");
-            //need this line to toolbar work on fragment
-        AppCompatActivity activity = (AppCompatActivity) getActivity();
-        activity.setSupportActionBar(toolbar);
+
+        //need this line to toolbar work on fragment
+        ((AppCompatActivity) getActivity()).setSupportActionBar(toolbar);
         //-------------------------------------------+
 
         build_tab_layout(v);
@@ -81,10 +82,18 @@ public class Tab_Layout extends Fragment {
     }
 
 
+    //this method is needed to the menu on toolbar be inflated
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        setHasOptionsMenu(true);
+    }
+
     //---------------------------TOOLBAR------------------------------------------------------------+
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
 
+        inflater.inflate(R.menu.toolbar_menu, menu);
         super.onCreateOptionsMenu(menu, inflater);
 
     }
@@ -128,7 +137,7 @@ public class Tab_Layout extends Fragment {
             }
         });
 
-        //this method is used to tab update the fragment selected when swapping betwen the fragments
+        //this method is used to tab update the fragment selected when swapping between the fragments
         viewPager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
             @Override
             public void onPageSelected(int position) {
