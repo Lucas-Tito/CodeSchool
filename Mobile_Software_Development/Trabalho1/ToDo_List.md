@@ -1,2 +1,0 @@
-+ gridview
-+ longclick
