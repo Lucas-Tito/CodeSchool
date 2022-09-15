@@ -57,9 +57,6 @@ public class Tab_Misc_Elements2 extends Fragment {
     @Override
     public void onPause() {
         super.onPause();
-        /**pause song when fragment is away
-         * if is used to prevent weird bug when trying to start music again
-         */
         if(playBtn_wasClicked)
             oldie_song.pause();
     }

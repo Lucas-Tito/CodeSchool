@@ -23,7 +23,7 @@
                 android:id="@+id/EditTextLable"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
+                android:layout_marginBottom="15dp"
                 android:text="@string/EditTextLable"
                 app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName"
                 app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName"
@@ -142,12 +142,12 @@
                 android:orientation="horizontal"
                 app:layout_constraintGuide_percent="0.60" />
 
-            <TextView
-                android:id="@+id/textView2"
+            <Button
+                android:id="@+id/drop_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="120dp"
-                android:text="TextView"
+                android:layout_marginTop="104dp"
+                android:text="drop button"
                 app:layout_constraintEnd_toStartOf="@+id/rightMargin_misc1"
                 app:layout_constraintStart_toStartOf="@+id/leftMargin_misc1"
                 app:layout_constraintTop_toBottomOf="@+id/dropdown_menu" />

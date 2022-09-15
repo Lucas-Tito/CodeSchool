@@ -5,11 +5,15 @@ import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.Button;
+import android.widget.PopupMenu;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 
 public class Tab_Misc_Elements1 extends Fragment {
@@ -62,6 +66,7 @@ public class Tab_Misc_Elements1 extends Fragment {
 
         build_autocomplete_countries(v);
         build_spinner(v);
+        build_dropdown_menu(v);
 
         return v;
 
@@ -94,6 +99,33 @@ public class Tab_Misc_Elements1 extends Fragment {
         aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(aa);
         //-----------------------------------------
+
+    }
+
+
+    private void build_dropdown_menu(View v){
+
+        Button drop_btn = (Button) v.findViewById(R.id.drop_btn);
+        drop_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Creating the instance of PopupMenu
+                PopupMenu popup = new PopupMenu(getActivity(), drop_btn);
+                //Inflating the Popup using xml file
+                popup.getMenuInflater()
+                        .inflate(R.menu.dropdown_menu, popup.getMenu());
+
+                //registering popup with OnMenuItemClickListener
+                popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                    public boolean onMenuItemClick(MenuItem item) {
+                        Toast.makeText(getActivity(), "You Clicked : " + item.getTitle(), Toast.LENGTH_SHORT).show();
+                        return true;
+                    }
+                });
+
+                popup.show(); //showing popup menu
+            }
+        });
 
     }
 
