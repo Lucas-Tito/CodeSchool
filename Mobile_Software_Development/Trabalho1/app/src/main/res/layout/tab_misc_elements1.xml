@@ -14,7 +14,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             tools:layout_editor_absoluteX="0dp"
             tools:layout_editor_absoluteY="37dp">
 
@@ -35,15 +35,15 @@
                 android:id="@+id/editTextTextPersonName"
                 android:layout_width="166dp"
                 android:layout_height="48dp"
-                android:layout_marginBottom="56dp"
+                android:layout_marginTop="100dp"
                 android:drawableLeft="@drawable/edit_text_person_ic"
                 android:ems="10"
                 android:hint="Name"
                 android:inputType="textPersonName"
-                app:layout_constraintBottom_toTopOf="@+id/upperGuide_misc1"
                 app:layout_constraintEnd_toStartOf="@+id/rightMargin_misc1"
                 app:layout_constraintHorizontal_bias="0.495"
-                app:layout_constraintStart_toStartOf="@+id/leftMargin_misc1" />
+                app:layout_constraintStart_toStartOf="@+id/leftMargin_misc1"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/textView"
@@ -61,11 +61,11 @@
                 android:id="@+id/dropdown_menu"
                 android:layout_width="191dp"
                 android:layout_height="48dp"
-                android:layout_marginTop="76dp"
+                android:layout_marginTop="170dp"
                 app:layout_constraintEnd_toStartOf="@+id/rightMargin_misc1"
                 app:layout_constraintHorizontal_bias="0.497"
                 app:layout_constraintStart_toStartOf="@+id/leftMargin_misc1"
-                app:layout_constraintTop_toTopOf="@+id/lowerGuide_misc1" />
+                app:layout_constraintTop_toBottomOf="@+id/autoCompleteTextView" />
 
             <TextView
                 android:id="@+id/autoCompleteLable"
@@ -99,13 +99,13 @@
                 android:id="@+id/autoCompleteTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="48dp"
+                android:layout_marginTop="170dp"
                 android:completionThreshold="1"
                 android:hint="@string/autoCompleteHint"
-                app:layout_constraintBottom_toTopOf="@+id/lowerGuide_misc1"
                 app:layout_constraintEnd_toStartOf="@+id/rightMargin_misc1"
                 app:layout_constraintHorizontal_bias="0.495"
                 app:layout_constraintStart_toStartOf="@+id/leftMargin_misc1"
-                app:layout_constraintTop_toTopOf="@+id/upperGuide_misc1" />
+                app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/leftMargin_misc1"
@@ -148,6 +148,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="104dp"
                 android:text="drop button"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/rightMargin_misc1"
                 app:layout_constraintStart_toStartOf="@+id/leftMargin_misc1"
                 app:layout_constraintTop_toBottomOf="@+id/dropdown_menu" />

@@ -3,18 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/lucas/OneDrive/Área de Trabalho/UFC/CADEIRAS/GitRepository/Mobile_Software_Development/Trabalho1/app/src/main/res/drawable/bottom_nav_grid_view.xml" value="0.1" />
-        <entry key="..\:/Users/lucas/OneDrive/Área de Trabalho/UFC/CADEIRAS/GitRepository/Mobile_Software_Development/Trabalho1/app/src/main/res/drawable/toolbar_search_ic.xml" value="0.1" />
-        <entry key="..\:/Users/lucas/OneDrive/Área de Trabalho/UFC/CADEIRAS/GitRepository/Mobile_Software_Development/Trabalho1/app/src/main/res/layout/activity_main.xml" value="0.20675105485232068" />
-        <entry key="..\:/Users/lucas/OneDrive/Área de Trabalho/UFC/CADEIRAS/GitRepository/Mobile_Software_Development/Trabalho1/app/src/main/res/layout/grid_view.xml" value="0.22" />
-        <entry key="..\:/Users/lucas/OneDrive/Área de Trabalho/UFC/CADEIRAS/GitRepository/Mobile_Software_Development/Trabalho1/app/src/main/res/layout/tab_layout.xml" value="0.20878623188405798" />
-        <entry key="..\:/Users/lucas/OneDrive/Área de Trabalho/UFC/CADEIRAS/GitRepository/Mobile_Software_Development/Trabalho1/app/src/main/res/layout/tab_misc_elements1.xml" value="0.25" />
-        <entry key="..\:/Users/lucas/OneDrive/Área de Trabalho/UFC/CADEIRAS/GitRepository/Mobile_Software_Development/Trabalho1/app/src/main/res/layout/tab_misc_elements2.xml" value="0.20878623188405798" />
-        <entry key="..\:/Users/lucas/OneDrive/Área de Trabalho/UFC/CADEIRAS/GitRepository/Mobile_Software_Development/Trabalho1/app/src/main/res/layout/tab_recycler_view.xml" value="0.13728470111448834" />
-        <entry key="..\:/Users/lucas/OneDrive/Área de Trabalho/UFC/CADEIRAS/GitRepository/Mobile_Software_Development/Trabalho1/app/src/main/res/layout/tab_recycler_view_elements.xml" value="0.5" />
-        <entry key="..\:/Users/lucas/OneDrive/Área de Trabalho/UFC/CADEIRAS/GitRepository/Mobile_Software_Development/Trabalho1/app/src/main/res/menu/bottom_nav_menu.xml" value="0.262037037037037" />
-        <entry key="..\:/Users/lucas/OneDrive/Área de Trabalho/UFC/CADEIRAS/GitRepository/Mobile_Software_Development/Trabalho1/app/src/main/res/menu/dropdown_menu.xml" value="0.27708333333333335" />
-        <entry key="..\:/Users/lucas/OneDrive/Área de Trabalho/UFC/CADEIRAS/GitRepository/Mobile_Software_Development/Trabalho1/app/src/main/res/menu/toolbar_menu.xml" value="0.278125" />
+        <entry key="..\:/Users/lucas/OneDrive/Área de Trabalho/UFC/CADEIRAS/GitRepository/Mobile_Software_Development/Trabalho1/app/src/main/res/layout/activity_main.xml" value="0.278125" />
         <entry key="..\:/Users/lucas/OneDrive/Área de Trabalho/UFC/CADEIRAS/GitRepository/Software_para_Dispositivos_Moveis/Trabalho1/app/src/main/res/layout/activity_main.xml" value="0.278125" />
         <entry key="..\:/Users/lucas/OneDrive/Área de Trabalho/UFC/CADEIRAS/GitRepository/Software_para_Dispositivos_Moveis/Trabalho1/app/src/main/res/layout/activity_recycler_view.xml" value="0.1" />
         <entry key="..\:/Users/lucas/OneDrive/Área de Trabalho/UFC/CADEIRAS/GitRepository/Software_para_Dispositivos_Moveis/Trabalho1/app/src/main/res/layout/activity_second_screen.xml" value="0.1" />
@@ -33,6 +22,21 @@
         <entry key="..\:/Users/lucas/OneDrive/Área de Trabalho/git_repository/Software_para_Dispositivos_Moveis/Trabalho1/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/lucas/OneDrive/Área de Trabalho/git_repository/Software_para_Dispositivos_Moveis/Trabalho1/app/src/main/res/menu/main_menu.xml" value="0.25" />
         <entry key="..\:/Users/vilan/Desktop/Mobile/Trabalho1/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/vilan/Desktop/UFC/GitRepository/Mobile_Software_Development/Trabalho1/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2035" />
+        <entry key="..\:/Users/vilan/Desktop/UFC/GitRepository/Mobile_Software_Development/Trabalho1/app/src/main/res/drawable/arrow_left.xml" value="0.2035" />
+        <entry key="..\:/Users/vilan/Desktop/UFC/GitRepository/Mobile_Software_Development/Trabalho1/app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.2035" />
+        <entry key="..\:/Users/vilan/Desktop/UFC/GitRepository/Mobile_Software_Development/Trabalho1/app/src/main/res/drawable/ic_baseline_person_24.xml" value="0.2035" />
+        <entry key="..\:/Users/vilan/Desktop/UFC/GitRepository/Mobile_Software_Development/Trabalho1/app/src/main/res/drawable/ic_toolbar.xml" value="0.2035" />
+        <entry key="..\:/Users/vilan/Desktop/UFC/GitRepository/Mobile_Software_Development/Trabalho1/app/src/main/res/drawable/toolbar_logo.xml" value="0.2165" />
+        <entry key="..\:/Users/vilan/Desktop/UFC/GitRepository/Mobile_Software_Development/Trabalho1/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/Users/vilan/Desktop/UFC/GitRepository/Mobile_Software_Development/Trabalho1/app/src/main/res/layout/fragment_main.xml" value="0.5" />
+        <entry key="..\:/Users/vilan/Desktop/UFC/GitRepository/Mobile_Software_Development/Trabalho1/app/src/main/res/layout/fragment_misc_elements1.xml" value="0.22" />
+        <entry key="..\:/Users/vilan/Desktop/UFC/GitRepository/Mobile_Software_Development/Trabalho1/app/src/main/res/layout/my_row.xml" value="0.17391304347826086" />
+        <entry key="..\:/Users/vilan/Desktop/UFC/GitRepository/Mobile_Software_Development/Trabalho1/app/src/main/res/layout/tab_layout.xml" value="0.17391304347826086" />
+        <entry key="..\:/Users/vilan/Desktop/UFC/GitRepository/Mobile_Software_Development/Trabalho1/app/src/main/res/layout/tab_misc_elements1.xml" value="0.25" />
+        <entry key="..\:/Users/vilan/Desktop/UFC/GitRepository/Mobile_Software_Development/Trabalho1/app/src/main/res/layout/tab_misc_elements2.xml" value="0.1" />
+        <entry key="..\:/Users/vilan/Desktop/UFC/GitRepository/Mobile_Software_Development/Trabalho1/app/src/main/res/menu/main_menu.xml" value="0.209375" />
+        <entry key="..\:/Users/vilan/Desktop/UFC/GitRepository/Mobile_Software_Development/Trabalho1/app/src/main/res/menu/toolbar_menu.xml" value="0.209375" />
         <entry key="..\:/Users/vilan/Desktop/UFC/GitRepository/Software para Dispositivos Móveis/Trabalho1/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/Users/vilan/Desktop/UFC/GitRepository/Software_para_Dispositivos_Moveis/Trabalho1/app/src/main/res/drawable/ic_baseline_panorama_wide_angle_24.xml" value="0.197" />
         <entry key="..\:/Users/vilan/Desktop/UFC/GitRepository/Software_para_Dispositivos_Moveis/Trabalho1/app/src/main/res/drawable/ic_search.xml" value="0.1" />
