@@ -10,18 +10,18 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 
-import com.example.assignment2.Item;
+import com.example.assignment2.RecycleView_Item;
 import com.example.assignment2.R;
 
 import java.util.ArrayList;
 
 public class Adapter_RecyclerView extends RecyclerView.Adapter<Adapter_RecyclerView.MyViewHolder> {
 
-    ArrayList<Item> items = new ArrayList<>();
+    ArrayList<RecycleView_Item> items = new ArrayList<>();
     Context context;
     private final Interface_RecyclerView recyclerViewInterface;
 
-    public Adapter_RecyclerView(Context ct, ArrayList<Item> items, Interface_RecyclerView recyclerViewInterface){
+    public Adapter_RecyclerView(Context ct, ArrayList<RecycleView_Item> items, Interface_RecyclerView recyclerViewInterface){
         this.items = items;
         context = ct;
         this.recyclerViewInterface = recyclerViewInterface;

@@ -1,16 +1,20 @@
-package com.example.assignment2;
+package com.example.assignment2.model;
 
-public class Item {
+import java.io.Serializable;
 
-    private String description;
-    private String category;
+public class Car implements Serializable {
 
+    private int id;
+    private String description, category;
 
-    Item(String description, String category){
-
+    Car(int id, String description, String category){
+        this.id = id;
         this.description = description;
         this.category = category;
+    }
 
+    public int getId() {
+        return id;
     }
 
 

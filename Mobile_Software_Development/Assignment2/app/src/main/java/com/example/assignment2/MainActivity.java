@@ -3,9 +3,7 @@ package com.example.assignment2;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 
 import com.example.assignment2.Adapters.Adapter_RecyclerView;
 import com.example.assignment2.Adapters.Interface_RecyclerView;
@@ -26,8 +24,8 @@ public class MainActivity extends AppCompatActivity implements Interface_Recycle
 
     private void build_recyclerView() {
 
-        ArrayList<Item> items = new ArrayList<>();
-        items.add(new Item("mercedes", "carro"));
+        ArrayList<RecycleView_Item> items = new ArrayList<>();
+        items.add(new RecycleView_Item("mercedes", "carro"));
 
         androidx.recyclerview.widget.RecyclerView recyclerView;
         recyclerView = findViewById(R.id.recyclerView);
