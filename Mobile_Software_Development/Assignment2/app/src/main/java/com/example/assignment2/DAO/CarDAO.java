@@ -27,6 +27,10 @@ public class CarDAO implements Serializable {
         return cars.get(pos);
     }
 
+    public ArrayList getAll(){
+        return cars;
+    }
+
     public int getSize(){
         return cars.size();
     }

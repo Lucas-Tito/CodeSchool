@@ -7,7 +7,7 @@ public class Car implements Serializable {
     private int id;
     private String description, category;
 
-    Car(int id, String description, String category){
+    public Car(int id, String description, String category){
         this.id = id;
         this.description = description;
         this.category = category;

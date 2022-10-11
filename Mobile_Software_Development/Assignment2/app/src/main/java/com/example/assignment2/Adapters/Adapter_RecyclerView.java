@@ -10,6 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 
+import com.example.assignment2.DAO.CarDAO;
 import com.example.assignment2.RecycleView_Item;
 import com.example.assignment2.R;
 
@@ -17,12 +18,12 @@ import java.util.ArrayList;
 
 public class Adapter_RecyclerView extends RecyclerView.Adapter<Adapter_RecyclerView.MyViewHolder> {
 
-    ArrayList<RecycleView_Item> items = new ArrayList<>();
+    CarDAO carDAO = new CarDAO();
     Context context;
     private final Interface_RecyclerView recyclerViewInterface;
 
-    public Adapter_RecyclerView(Context ct, ArrayList<RecycleView_Item> items, Interface_RecyclerView recyclerViewInterface){
-        this.items = items;
+    public Adapter_RecyclerView(Context ct, CarDAO carDAO, Interface_RecyclerView recyclerViewInterface){
+        this.carDAO = carDAO;
         context = ct;
         this.recyclerViewInterface = recyclerViewInterface;
     }
@@ -39,14 +40,14 @@ public class Adapter_RecyclerView extends RecyclerView.Adapter<Adapter_RecyclerV
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
 
-        holder.description_label.setText(items.get(position).getDescription());
-        holder.category_label.setText(items.get(position).getCategory());
+        holder.description_label.setText(carDAO.get(position).getDescription());
+        holder.category_label.setText(carDAO.get(position).getCategory());
 
     }
 
     @Override
     public int getItemCount() {
-        return items.size();
+        return carDAO.getSize();
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder{
