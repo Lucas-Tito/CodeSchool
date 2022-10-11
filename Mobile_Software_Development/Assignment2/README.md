@@ -6,3 +6,4 @@
 
 ## ToDo List 📔
 + remove onClick listener from recycleView items.
++ remove necessity to pass id in constructor.
