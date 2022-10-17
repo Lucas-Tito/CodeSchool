@@ -5,5 +5,5 @@
 <br><br><br>
 
 ## ToDo List 📔
-+ implement bar_title on MainActivity2
+(empty)
 
