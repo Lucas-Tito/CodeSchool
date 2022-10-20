@@ -6,18 +6,20 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.assignment2.Adapters.Adapter_RecyclerView;
-import com.example.assignment2.Adapters.Interface_RecyclerView;
 import com.example.assignment2.DAO.CarDAO;
 import com.example.assignment2.model.Car;
 
-public class MainActivity extends AppCompatActivity implements Interface_RecyclerView {
+public class MainActivity extends AppCompatActivity {
 
     CarDAO carDAO = new CarDAO();
+    Adapter_RecyclerView myAdapter;
 
 
 
@@ -27,11 +29,16 @@ public class MainActivity extends AppCompatActivity implements Interface_Recycle
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
+
         if (requestCode == 101)
-            if(resultCode == MainActivity.RESULT_OK){
+            if(resultCode == MainActivity.RESULT_OK)
+                carDAO.addCar( (Car) data.getSerializableExtra("newCar"));
+
+
+        if (requestCode == 102)
+            if(resultCode == MainActivity.RESULT_OK)
                 carDAO = (CarDAO) data.getSerializableExtra("newCarDao");
 
-            }
 
 
     }
@@ -43,7 +50,7 @@ public class MainActivity extends AppCompatActivity implements Interface_Recycle
         setContentView(R.layout.activity_main);
 
         //adding car just for testing
-        carDAO.addCar(new Car(1, "mercedes", "4x4"));
+        carDAO.addCar(new Car(0, "mercedes", "4x4"));
 
         build_recyclerView();
         build_add_btn();
@@ -55,7 +62,7 @@ public class MainActivity extends AppCompatActivity implements Interface_Recycle
         super.onResume();
 
         //refresh recyclerView to show new items
-        build_recyclerView();
+        myAdapter.notifyDataSetChanged();
     }
 
     private void build_recyclerView() {
@@ -63,29 +70,9 @@ public class MainActivity extends AppCompatActivity implements Interface_Recycle
         androidx.recyclerview.widget.RecyclerView recyclerView;
         recyclerView = findViewById(R.id.recyclerView);
 
-        Adapter_RecyclerView myAdapter = new Adapter_RecyclerView(this, carDAO, this);
+        myAdapter = new Adapter_RecyclerView(this, carDAO);
         recyclerView.setAdapter(myAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
-    }
-
-    //click listener for recycleView items
-    @Override
-    public void onItemClick(int position, String fragToStart) {
-
-/*        Intent intent = new Intent(getActivity(), Edit_Transaction_Activity.class);
-        intent.putExtra("transaction_pos", position);
-        intent.putExtra("expenseDao", this.expenseDAO);
-        intent.putExtra("incomeDao", this.incomeDAO);
-
-        if(fragToStart.equals("editExpense")){
-            intent.putExtra("frag_key", fragToStart);
-            getActivity().startActivityForResult(intent, 101);
-        }
-        else{
-            intent.putExtra("frag_key", fragToStart);
-            getActivity().startActivityForResult(intent, 102);
-        }*/
 
     }
 
@@ -99,7 +86,7 @@ public class MainActivity extends AppCompatActivity implements Interface_Recycle
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, MainActivity2.class);
                 intent.putExtra("fragToStart", 1);
-                intent.putExtra("carDao", carDAO);
+                intent.putExtra("carID", carDAO.getSize());
                 startActivityForResult(intent, 101);
             }
         });
@@ -114,12 +101,22 @@ public class MainActivity extends AppCompatActivity implements Interface_Recycle
         edit_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, MainActivity2.class);
-                intent.putExtra("fragToStart", 2);
-                int carID = Integer.parseInt(id_label.getText().toString());
-                intent.putExtra("carID", carID);
-                intent.putExtra("carDao", carDAO);
-                startActivityForResult(intent, 101);
+
+                if(TextUtils.isEmpty(id_label.getText().toString())){
+                    Toast.makeText(MainActivity.this, "id field is empty", Toast.LENGTH_LONG).show();
+                }
+                else if(Integer.parseInt(id_label.getText().toString()) < 0
+                        || Integer.parseInt(id_label.getText().toString()) >= carDAO.getSize() ){
+                    Toast.makeText(MainActivity.this, "id provided is out of bounds", Toast.LENGTH_LONG).show();
+                }
+                else {
+                    Intent intent = new Intent(MainActivity.this, MainActivity2.class);
+                    intent.putExtra("fragToStart", 2);
+                    int carID = Integer.parseInt(id_label.getText().toString());
+                    intent.putExtra("carID", carID);
+                    intent.putExtra("carDao", carDAO);
+                    startActivityForResult(intent, 102);
+                }
             }
         });
 

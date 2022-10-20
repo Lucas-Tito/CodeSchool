@@ -11,21 +11,17 @@ import androidx.recyclerview.widget.RecyclerView;
 
 
 import com.example.assignment2.DAO.CarDAO;
-import com.example.assignment2.RecycleView_Item;
 import com.example.assignment2.R;
-
-import java.util.ArrayList;
 
 public class Adapter_RecyclerView extends RecyclerView.Adapter<Adapter_RecyclerView.MyViewHolder> {
 
     CarDAO carDAO = new CarDAO();
     Context context;
-    private final Interface_RecyclerView recyclerViewInterface;
 
-    public Adapter_RecyclerView(Context ct, CarDAO carDAO, Interface_RecyclerView recyclerViewInterface){
+    public Adapter_RecyclerView(Context ct, CarDAO carDAO){
         this.carDAO = carDAO;
         context = ct;
-        this.recyclerViewInterface = recyclerViewInterface;
+
     }
 
     @NonNull
@@ -42,6 +38,7 @@ public class Adapter_RecyclerView extends RecyclerView.Adapter<Adapter_RecyclerV
 
         holder.description_label.setText(carDAO.get(position).getDescription());
         holder.category_label.setText(carDAO.get(position).getCategory());
+        holder.id_label.setText(Integer.toString(carDAO.get(position).getId()));
 
     }
 
@@ -51,34 +48,16 @@ public class Adapter_RecyclerView extends RecyclerView.Adapter<Adapter_RecyclerV
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder{
-        TextView date_label, description_label,
-                category_label, amount_label;
+        TextView description_label,
+                category_label, id_label;
 
         public MyViewHolder(@NonNull View itemView){
             super(itemView);
 
             description_label = itemView.findViewById(R.id.description_label);
             category_label = itemView.findViewById(R.id.category_label);
+            id_label = itemView.findViewById(R.id.id_TextView);
 
-
-/*            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    if(recyclerViewInterface!=null){
-                        int pos = getAdapterPosition();
-                        Transaction transaction = items.get(pos);
-                        pos = transaction.getId();
-                        String fragToStart;
-
-                        if(transaction instanceof Expense)
-                            fragToStart = "editExpense";
-                        else
-                            fragToStart = "editIncome";
-
-                        recyclerViewInterface.onItemClick(pos, fragToStart);
-                    }
-                }
-            });*/
         }
     }
 

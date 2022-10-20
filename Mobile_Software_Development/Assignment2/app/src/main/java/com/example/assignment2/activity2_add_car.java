@@ -22,19 +22,19 @@ import java.util.Date;
 public class activity2_add_car extends Fragment {
 
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String carDAO_key = "carDAO_key";
+    private static final String carID_key = "carID_key";
 
-    private CarDAO carDAO;
+    private int carID;
 
     public activity2_add_car() {
         // Required empty public constructor
     }
 
 
-    public static activity2_add_car newInstance(CarDAO carDAO) {
+    public static activity2_add_car newInstance(int carID) {
         activity2_add_car fragment = new activity2_add_car();
         Bundle args = new Bundle();
-        args.putSerializable(carDAO_key, carDAO);
+        args.putSerializable(carID_key, carID);
         fragment.setArguments(args);
         return fragment;
     }
@@ -43,7 +43,7 @@ public class activity2_add_car extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            carDAO = (CarDAO) getArguments().getSerializable(carDAO_key);
+            carID = getArguments().getInt(carID_key);
         }
     }
 
@@ -72,11 +72,10 @@ public class activity2_add_car extends Fragment {
                 String description = description_label.getText().toString();
                 String category = category_label.getText().toString();
 
-                Car newCar = new Car(carDAO.getSize(), description, category);
-                carDAO.addCar(newCar);
+                Car newCar = new Car(carID, description, category);
 
                 Intent returnIntent = new Intent();
-                returnIntent.putExtra("newCarDao", carDAO);
+                returnIntent.putExtra("newCar", newCar);
                 getActivity().setResult(getActivity().RESULT_OK, returnIntent);
                 getActivity().finish();
             }

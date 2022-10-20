@@ -46,7 +46,8 @@ public class MainActivity2 extends AppCompatActivity {
 
 
         if(getIntent().getIntExtra("fragToStart", 0) == 1){
-            fragmentToStart = activity2_add_car.newInstance(carDAO);
+            int carID = getIntent().getIntExtra("carID", 0);
+            fragmentToStart = activity2_add_car.newInstance(carID);
         }
         else if(getIntent().getIntExtra("fragToStart", 0) == 2){
             int carID = getIntent().getIntExtra("carID", 0);
