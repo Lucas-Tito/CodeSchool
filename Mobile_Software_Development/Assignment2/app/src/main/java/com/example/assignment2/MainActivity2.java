@@ -50,7 +50,7 @@ public class MainActivity2 extends AppCompatActivity {
         }
         else if(getIntent().getIntExtra("fragToStart", 0) == 2){
             int carID = getIntent().getIntExtra("carID", 0);
-            fragmentToStart = activity2_edit_car.newInstance(carDAO, carID);
+            fragmentToStart = activity2_edit_car.newInstance(carDAO, carID );
         }
 
         getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout, fragmentToStart).commit();
